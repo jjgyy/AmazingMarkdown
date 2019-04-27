@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AMEdittingContentController.h
 //  AmazingMarkdown
 //
 //  Created by Apple on 2019/4/26.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface AMEdittingContentController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

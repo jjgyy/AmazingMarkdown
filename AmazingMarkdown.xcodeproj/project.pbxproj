@@ -3,31 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA442272EC8C00E08D43 /* AppDelegate.m */; };
-		1842EA482272EC8C00E08D43 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA472272EC8C00E08D43 /* ViewController.m */; };
 		1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
 		1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */; };
 		1842EA502272EC8C00E08D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA4F2272EC8C00E08D43 /* Assets.xcassets */; };
 		1842EA532272EC8C00E08D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA512272EC8C00E08D43 /* LaunchScreen.storyboard */; };
 		1842EA562272EC8C00E08D43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA552272EC8C00E08D43 /* main.m */; };
+		1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */; };
+		1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA642272EDB300E08D43 /* AMPreviewController.swift */; };
+		52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1842EA432272EC8C00E08D43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1842EA442272EC8C00E08D43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1842EA462272EC8C00E08D43 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1842EA472272EC8C00E08D43 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1842EA4A2272EC8C00E08D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1842EA4D2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AmazingMarkdown.xcdatamodel; sourceTree = "<group>"; };
 		1842EA4F2272EC8C00E08D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1842EA522272EC8C00E08D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1842EA542272EC8C00E08D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1842EA552272EC8C00E08D43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1842EA5C2272ECE000E08D43 /* AmazingMarkdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmazingMarkdown-Bridging-Header.h"; sourceTree = "<group>"; };
+		1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEdittingContentController.h; sourceTree = "<group>"; };
+		1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEdittingContentController.m; sourceTree = "<group>"; };
+		1842EA642272EDB300E08D43 /* AMPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMPreviewController.swift; sourceTree = "<group>"; };
+		51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.debug.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
+		53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazingMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.release.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFF01E7F049621876F4C840 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */,
+				C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1842EA372272EC8C00E08D43 = {
 			isa = PBXGroup;
 			children = (
 				1842EA422272EC8C00E08D43 /* AmazingMarkdown */,
 				1842EA412272EC8C00E08D43 /* Products */,
+				0FFF01E7F049621876F4C840 /* Pods */,
+				919A05CAE740D002F66BD882 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,18 +79,44 @@
 		1842EA422272EC8C00E08D43 /* AmazingMarkdown */ = {
 			isa = PBXGroup;
 			children = (
+				187E52AB2274230F007D1B0E /* Controllers */,
 				1842EA432272EC8C00E08D43 /* AppDelegate.h */,
 				1842EA442272EC8C00E08D43 /* AppDelegate.m */,
-				1842EA462272EC8C00E08D43 /* ViewController.h */,
-				1842EA472272EC8C00E08D43 /* ViewController.m */,
 				1842EA492272EC8C00E08D43 /* Main.storyboard */,
+				1842EA552272EC8C00E08D43 /* main.m */,
+				1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */,
+				1842EA5C2272ECE000E08D43 /* AmazingMarkdown-Bridging-Header.h */,
+				187E52AA227422E8007D1B0E /* SupportingFiles */,
+			);
+			path = AmazingMarkdown;
+			sourceTree = "<group>";
+		};
+		187E52AA227422E8007D1B0E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				1842EA4F2272EC8C00E08D43 /* Assets.xcassets */,
 				1842EA512272EC8C00E08D43 /* LaunchScreen.storyboard */,
 				1842EA542272EC8C00E08D43 /* Info.plist */,
-				1842EA552272EC8C00E08D43 /* main.m */,
-				1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */,
 			);
-			path = AmazingMarkdown;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		187E52AB2274230F007D1B0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
+				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
+				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		919A05CAE740D002F66BD882 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1842EA592272EC8C00E08D43 /* Build configuration list for PBXNativeTarget "AmazingMarkdown" */;
 			buildPhases = (
+				317172D8CCCBB6B7267A7BE4 /* [CP] Check Pods Manifest.lock */,
 				1842EA3C2272EC8C00E08D43 /* Sources */,
 				1842EA3D2272EC8C00E08D43 /* Frameworks */,
 				1842EA3E2272EC8C00E08D43 /* Resources */,
+				5421AA05431EB7EB7134653D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -105,6 +152,7 @@
 				TargetAttributes = {
 					1842EA3F2272EC8C00E08D43 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -139,12 +187,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		317172D8CCCBB6B7267A7BE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AmazingMarkdown-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5421AA05431EB7EB7134653D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1842EA3C2272EC8C00E08D43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1842EA482272EC8C00E08D43 /* ViewController.m in Sources */,
+				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
+				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
 				1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */,
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
@@ -287,8 +378,10 @@
 		};
 		1842EA5A2272EC8C00E08D43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNNNA39DX6;
 				INFOPLIST_FILE = AmazingMarkdown/Info.plist;
@@ -298,14 +391,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Young.AmazingMarkdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AmazingMarkdown/AmazingMarkdown-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		1842EA5B2272EC8C00E08D43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QNNNA39DX6;
 				INFOPLIST_FILE = AmazingMarkdown/Info.plist;
@@ -315,6 +413,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Young.AmazingMarkdown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AmazingMarkdown/AmazingMarkdown-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
