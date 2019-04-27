@@ -12,65 +12,53 @@
 @implementation AMKeyboardToolbarFactory
 
 + (void)addMarkdownInputToolbarFor:(UITextView *)textView {
-    DYKeyboardToolbarButton * hashButton = [DYKeyboardToolbarButton buttonWithTitle:@"#"];
-    [hashButton addEventHandler:^{
+    DYKeyboardToolbarButton * hashButton = [DYKeyboardToolbarButton buttonWithTitle:@"#" eventHandler:^{
         [textView insertText:@"#"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * asteriskButton = [DYKeyboardToolbarButton buttonWithTitle:@"*"];
-    [asteriskButton addEventHandler:^{
+    DYKeyboardToolbarButton * asteriskButton = [DYKeyboardToolbarButton buttonWithTitle:@"*" eventHandler:^{
         [textView insertText:@"*"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * hyphenButton = [DYKeyboardToolbarButton buttonWithTitle:@"-"];
-    [hyphenButton addEventHandler:^{
+    DYKeyboardToolbarButton * hyphenButton = [DYKeyboardToolbarButton buttonWithTitle:@"-" eventHandler:^{
         [textView insertText:@"-"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * underlineButton = [DYKeyboardToolbarButton buttonWithTitle:@"_"];
-    [underlineButton addEventHandler:^{
+    DYKeyboardToolbarButton * underlineButton = [DYKeyboardToolbarButton buttonWithTitle:@"_" eventHandler:^{
         [textView insertText:@"_"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * waveButton = [DYKeyboardToolbarButton buttonWithTitle:@"~"];
-    [waveButton addEventHandler:^{
+    DYKeyboardToolbarButton * waveButton = [DYKeyboardToolbarButton buttonWithTitle:@"~" eventHandler:^{
         [textView insertText:@"~"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * backquoteButton = [DYKeyboardToolbarButton buttonWithTitle:@"`"];
-    [backquoteButton addEventHandler:^{
+    DYKeyboardToolbarButton * backquoteButton = [DYKeyboardToolbarButton buttonWithTitle:@"`" eventHandler:^{
         [textView insertText:@"`"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * rightAngleButton = [DYKeyboardToolbarButton buttonWithTitle:@">"];
-    [rightAngleButton addEventHandler:^{
+    DYKeyboardToolbarButton * rightAngleButton = [DYKeyboardToolbarButton buttonWithTitle:@">" eventHandler:^{
         [textView insertText:@">"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton *orButton = [DYKeyboardToolbarButton buttonWithTitle:@"|"];
-    [orButton addEventHandler:^{
+    DYKeyboardToolbarButton *orButton = [DYKeyboardToolbarButton buttonWithTitle:@"|" eventHandler:^{
         [textView insertText:@"|"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * leftBracketButton = [DYKeyboardToolbarButton buttonWithTitle:@"["];
-    [leftBracketButton addEventHandler:^{
+    DYKeyboardToolbarButton * leftBracketButton = [DYKeyboardToolbarButton buttonWithTitle:@"[" eventHandler:^{
         [textView insertText:@"["];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * rightBracketButton = [DYKeyboardToolbarButton buttonWithTitle:@"]"];
-    [rightBracketButton addEventHandler:^{
+    DYKeyboardToolbarButton * rightBracketButton = [DYKeyboardToolbarButton buttonWithTitle:@"]" eventHandler:^{
         [textView insertText:@"]"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * leftParenthesesButton = [DYKeyboardToolbarButton buttonWithTitle:@"("];
-    [leftParenthesesButton addEventHandler:^{
+    DYKeyboardToolbarButton * leftParenthesesButton = [DYKeyboardToolbarButton buttonWithTitle:@"(" eventHandler:^{
         [textView insertText:@"("];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
-    DYKeyboardToolbarButton * rightParenthesesButton = [DYKeyboardToolbarButton buttonWithTitle:@")"];
-    [rightParenthesesButton addEventHandler:^{
+    DYKeyboardToolbarButton * rightParenthesesButton = [DYKeyboardToolbarButton buttonWithTitle:@")" eventHandler:^{
         [textView insertText:@")"];
-    } forControlEvents:UIControlEventTouchUpInside];
+    }];
     
     textView.inputAccessoryView = [DYKeyboardToolbar toolbarWithButtons:@[hashButton, asteriskButton, underlineButton, waveButton, hyphenButton, backquoteButton, rightAngleButton, orButton, leftBracketButton, rightBracketButton, leftParenthesesButton, rightParenthesesButton]];
 }

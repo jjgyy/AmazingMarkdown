@@ -19,6 +19,9 @@
 		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
 		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
 		18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F42622227498AC002EBDDD /* DYMarkdownTextView.m */; };
+		18F4262D2274D28E002EBDDD /* MarkdownTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F426272274D28D002EBDDD /* MarkdownTokens.m */; };
+		18F4262E2274D28E002EBDDD /* MarkdownTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4262B2274D28D002EBDDD /* MarkdownTokenizer.m */; };
+		18F4262F2274D28E002EBDDD /* NSAttributedStringMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4262C2274D28D002EBDDD /* NSAttributedStringMarkdownParser.m */; };
 		52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,12 @@
 		18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYKeyboardToolbarButton.m; sourceTree = "<group>"; };
 		18F42621227498AC002EBDDD /* DYMarkdownTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYMarkdownTextView.h; sourceTree = "<group>"; };
 		18F42622227498AC002EBDDD /* DYMarkdownTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYMarkdownTextView.m; sourceTree = "<group>"; };
+		18F426272274D28D002EBDDD /* MarkdownTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokens.m; sourceTree = "<group>"; };
+		18F426282274D28D002EBDDD /* NSAttributedStringMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedStringMarkdownParser.h; sourceTree = "<group>"; };
+		18F426292274D28D002EBDDD /* NimbusMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NimbusMarkdown.h; sourceTree = "<group>"; };
+		18F4262A2274D28D002EBDDD /* MarkdownTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownTokens.h; sourceTree = "<group>"; };
+		18F4262B2274D28D002EBDDD /* MarkdownTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokenizer.m; sourceTree = "<group>"; };
+		18F4262C2274D28D002EBDDD /* NSAttributedStringMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringMarkdownParser.m; sourceTree = "<group>"; };
 		51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.debug.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
 		53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazingMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.release.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +82,7 @@
 		1842EA372272EC8C00E08D43 = {
 			isa = PBXGroup;
 			children = (
+				18F426262274D28D002EBDDD /* NimbusMarkdown */,
 				18F42624227498DE002EBDDD /* DYMarkdownTextView */,
 				18F4261A227471EC002EBDDD /* DYKeyboardToolbar */,
 				1842EA422272EC8C00E08D43 /* AmazingMarkdown */,
@@ -153,6 +163,19 @@
 				18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		18F426262274D28D002EBDDD /* NimbusMarkdown */ = {
+			isa = PBXGroup;
+			children = (
+				18F426272274D28D002EBDDD /* MarkdownTokens.m */,
+				18F426282274D28D002EBDDD /* NSAttributedStringMarkdownParser.h */,
+				18F426292274D28D002EBDDD /* NimbusMarkdown.h */,
+				18F4262A2274D28D002EBDDD /* MarkdownTokens.h */,
+				18F4262B2274D28D002EBDDD /* MarkdownTokenizer.m */,
+				18F4262C2274D28D002EBDDD /* NSAttributedStringMarkdownParser.m */,
+			);
+			path = NimbusMarkdown;
 			sourceTree = "<group>";
 		};
 		919A05CAE740D002F66BD882 /* Frameworks */ = {
@@ -282,9 +305,12 @@
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
 				1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */,
 				18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */,
+				18F4262D2274D28E002EBDDD /* MarkdownTokens.m in Sources */,
+				18F4262F2274D28E002EBDDD /* NSAttributedStringMarkdownParser.m in Sources */,
 				18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */,
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
+				18F4262E2274D28E002EBDDD /* MarkdownTokenizer.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
 				18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */,
 			);

@@ -10,17 +10,25 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern const CGFloat DYKeyboardToolbarButtonTitleFontSize;
-
 typedef void (^eventHandlerBlock)(void);
 
 @interface DYKeyboardToolbarButton : UIButton
 
++ (instancetype)button;
+
 + (instancetype)buttonWithTitle:(NSString *)title;
 
-+ (instancetype)buttonWithTitle:(NSString *)title andEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent;
++ (instancetype)buttonWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler;
 
-- (void)addEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent;
++ (instancetype)buttonWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler forControlEvents:(UIControlEvents)controlEvents;
+
+- (instancetype)initWithTitle:(NSString *)title;
+
+- (instancetype)initWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler;
+
+- (instancetype)initWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler forControlEvents:(UIControlEvents)controlEvent;
+
+- (void)setEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvents;
 
 @end
 

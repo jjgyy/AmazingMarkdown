@@ -8,56 +8,86 @@
 
 #import "DYKeyboardToolbarButton.h"
 
-const CGFloat DYKeyboardToolbarButtonTitleFontSize = 14.0f;
-static const CGFloat kButtonCornerRadius = 3.0f;
-static const CGFloat kButtonContentHorizontalInset = 18.0f;
-static const CGFloat kButtonContentVerticalInset = 14.0f;
-static const CGFloat kButtonTitleFontSize = 14.0f;
+static const CGFloat kButtonCornerRadius = 5.0f;
+static const CGFloat kButtonContentHorizontalInset = 22.0f;
+static const CGFloat kButtonContentVerticalInset = 8.0f;
+static const CGFloat kButtonTitleFontSize = 22.0f;
 
 @interface DYKeyboardToolbarButton ()
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, copy) eventHandlerBlock buttonPressBlock;
+@property (nonatomic, copy) eventHandlerBlock eventHandler;
 
 @end
 
+
 @implementation DYKeyboardToolbarButton
 
++ (instancetype)button {
+    return [[DYKeyboardToolbarButton alloc] init];
+}
+
 + (instancetype)buttonWithTitle:(NSString *)title {
-    return [[self alloc] initWithTitle:title];
+    return [[DYKeyboardToolbarButton alloc] initWithTitle:title];
 }
 
-+ (instancetype)buttonWithTitle:(NSString *)title andEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent {
-    DYKeyboardToolbarButton *newButton = [DYKeyboardToolbarButton buttonWithTitle:title];
-    [newButton addEventHandler:eventHandler forControlEvents:controlEvent];
-    
-    return newButton;
++ (instancetype)buttonWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler {
+    return [[DYKeyboardToolbarButton alloc] initWithTitle:title eventHandler:eventHandler];
 }
 
-- (id)initWithTitle:(NSString *)title {
-    _title = title;
-    return [self init];
++ (instancetype)buttonWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler forControlEvents:(UIControlEvents)controlEvents {
+    return [[DYKeyboardToolbarButton alloc] initWithTitle:title eventHandler:eventHandler forControlEvents:controlEvents];
 }
 
-- (id)init {
-    CGSize sizeOfText = [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:DYKeyboardToolbarButtonTitleFontSize]}];
+- (instancetype)init {
+    return [self initWithTitle:@"" eventHandler:nil forControlEvents:0];
+}
+
+- (instancetype)initWithTitle:(NSString *)title {
+    return [self initWithTitle:title eventHandler:nil forControlEvents:0];
+}
+
+- (instancetype)initWithTitle:(NSString *)title eventHandler:(eventHandlerBlock)eventHandler {
+    return [self initWithTitle:title eventHandler:eventHandler forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (instancetype)initWithTitle:(NSString *)title eventHandler:(eventHandlerBlock _Nullable)eventHandler forControlEvents:(UIControlEvents)controlEvent {
+    CGSize sizeOfText = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:kButtonTitleFontSize]}];
     if (self = [super initWithFrame:CGRectMake(0.0f, 0.0f, sizeOfText.width + kButtonContentHorizontalInset, sizeOfText.height + kButtonContentVerticalInset)]) {
-        self.backgroundColor = [UIColor whiteColor];
+        self->_title = title;
+        self.backgroundColor = UIColor.clearColor;
         self.layer.cornerRadius = kButtonCornerRadius;
         [self setTitle:self.title forState:UIControlStateNormal];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        self.titleLabel.font = [UIFont boldSystemFontOfSize:kButtonTitleFontSize];
+        self.titleLabel.font = [UIFont systemFontOfSize:kButtonTitleFontSize];
+        if (eventHandler) {
+            [self setEventHandler:eventHandler forControlEvents:controlEvent];
+        }
     }
     return self;
 }
 
-- (void)addEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvent {
-    self.buttonPressBlock = eventHandler;
-    [self addTarget:self action:@selector(buttonPressed) forControlEvents:controlEvent];
+- (void)setEventHandler:(eventHandlerBlock)eventHandler {
+    [self setEventHandler:eventHandler forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)buttonPressed {
-    self.buttonPressBlock();
+- (void)setEventHandler:(eventHandlerBlock)eventHandler forControlEvents:(UIControlEvents)controlEvents {
+    self->_eventHandler = eventHandler;
+    [self addTarget:self action:@selector(triggerEventHandler) forControlEvents:controlEvents];
+}
+
+- (void)triggerEventHandler {
+    self.eventHandler();
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.backgroundColor = UIColor.whiteColor;
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.backgroundColor = UIColor.clearColor;
+    [super touchesEnded:touches withEvent:event];
 }
 
 @end

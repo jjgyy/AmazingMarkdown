@@ -14,7 +14,7 @@ static NSString * const kNativeKeyboardColorHexString = @"#d1d3d8";
 static const CGFloat kToolbarHeight = 40.0f;
 static const CGFloat kToolbarContentHorizontalInset = 8.0f;
 static const CGFloat kToolbarContentVerticalInset = 6.0f;
-static const CGFloat kGapBetweenButtons = 8.0f;
+static const CGFloat kGapBetweenButtons = 6.0f;
 
 @interface DYKeyboardToolbar ()
 
