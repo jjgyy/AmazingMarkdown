@@ -8,5 +8,9 @@ target 'AmazingMarkdown' do
   # Pods for AmazingMarkdown
   pod "MarkdownView"
   pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'DZNEmptyDataSet'
+  pod 'YYText'
+  # pod "RFKeyboardToolbar", "~> 1.3"
+  pod 'ChameleonFramework'
 
 end

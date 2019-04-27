@@ -15,6 +15,10 @@
 		1842EA562272EC8C00E08D43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA552272EC8C00E08D43 /* main.m */; };
 		1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */; };
 		1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA642272EDB300E08D43 /* AMPreviewController.swift */; };
+		18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */; };
+		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
+		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
+		18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F42622227498AC002EBDDD /* DYMarkdownTextView.m */; };
 		52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,14 @@
 		1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEdittingContentController.h; sourceTree = "<group>"; };
 		1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEdittingContentController.m; sourceTree = "<group>"; };
 		1842EA642272EDB300E08D43 /* AMPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMPreviewController.swift; sourceTree = "<group>"; };
+		18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardToolbarFactory.m; sourceTree = "<group>"; };
+		18F4260B22744C67002EBDDD /* AMKeyboardToolbarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMKeyboardToolbarFactory.h; sourceTree = "<group>"; };
+		18F4261B22747281002EBDDD /* DYKeyboardToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYKeyboardToolbar.h; sourceTree = "<group>"; };
+		18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYKeyboardToolbar.m; sourceTree = "<group>"; };
+		18F4261E227472B4002EBDDD /* DYKeyboardToolbarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYKeyboardToolbarButton.h; sourceTree = "<group>"; };
+		18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYKeyboardToolbarButton.m; sourceTree = "<group>"; };
+		18F42621227498AC002EBDDD /* DYMarkdownTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYMarkdownTextView.h; sourceTree = "<group>"; };
+		18F42622227498AC002EBDDD /* DYMarkdownTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYMarkdownTextView.m; sourceTree = "<group>"; };
 		51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.debug.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
 		53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazingMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.release.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +73,8 @@
 		1842EA372272EC8C00E08D43 = {
 			isa = PBXGroup;
 			children = (
+				18F42624227498DE002EBDDD /* DYMarkdownTextView */,
+				18F4261A227471EC002EBDDD /* DYKeyboardToolbar */,
 				1842EA422272EC8C00E08D43 /* AmazingMarkdown */,
 				1842EA412272EC8C00E08D43 /* Products */,
 				0FFF01E7F049621876F4C840 /* Pods */,
@@ -79,7 +93,9 @@
 		1842EA422272EC8C00E08D43 /* AmazingMarkdown */ = {
 			isa = PBXGroup;
 			children = (
+				18F426252274995D002EBDDD /* Factories */,
 				187E52AB2274230F007D1B0E /* Controllers */,
+				1842EA542272EC8C00E08D43 /* Info.plist */,
 				1842EA432272EC8C00E08D43 /* AppDelegate.h */,
 				1842EA442272EC8C00E08D43 /* AppDelegate.m */,
 				1842EA492272EC8C00E08D43 /* Main.storyboard */,
@@ -96,7 +112,6 @@
 			children = (
 				1842EA4F2272EC8C00E08D43 /* Assets.xcassets */,
 				1842EA512272EC8C00E08D43 /* LaunchScreen.storyboard */,
-				1842EA542272EC8C00E08D43 /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -109,6 +124,35 @@
 				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		18F4261A227471EC002EBDDD /* DYKeyboardToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				18F4261B22747281002EBDDD /* DYKeyboardToolbar.h */,
+				18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */,
+				18F4261E227472B4002EBDDD /* DYKeyboardToolbarButton.h */,
+				18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */,
+			);
+			path = DYKeyboardToolbar;
+			sourceTree = "<group>";
+		};
+		18F42624227498DE002EBDDD /* DYMarkdownTextView */ = {
+			isa = PBXGroup;
+			children = (
+				18F42621227498AC002EBDDD /* DYMarkdownTextView.h */,
+				18F42622227498AC002EBDDD /* DYMarkdownTextView.m */,
+			);
+			path = DYMarkdownTextView;
+			sourceTree = "<group>";
+		};
+		18F426252274995D002EBDDD /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				18F4260B22744C67002EBDDD /* AMKeyboardToolbarFactory.h */,
+				18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		919A05CAE740D002F66BD882 /* Frameworks */ = {
@@ -237,8 +281,12 @@
 				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
 				1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */,
+				18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */,
+				18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */,
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
+				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
+				18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,12 @@ class AMPreviewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.markdownPreviewView.load(markdown: markdownString)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.8) {
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+        }
     }
     
     @objc

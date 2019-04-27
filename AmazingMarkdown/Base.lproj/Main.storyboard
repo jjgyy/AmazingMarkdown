@@ -30,10 +30,10 @@
         <scene sceneID="aW8-ZK-oWN">
             <objects>
                 <viewController id="30b-XT-qer" customClass="AMEdittingContentController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Deh-4G-wOy">
+                    <view key="view" contentMode="scaleToFill" id="Deh-4G-wOy" customClass="DYMarkdownTextView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="BFW-rt-wAr"/>
                     </view>
                     <navigationItem key="navigationItem" id="pt7-Yd-Ezr">
@@ -43,6 +43,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainTextView" destination="Deh-4G-wOy" id="chV-4W-vxB"/>
+                        <outlet property="navigationItem" destination="pt7-Yd-Ezr" id="s7x-Zg-Oia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hs-NJ-elq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
