@@ -9,8 +9,8 @@
 #import "DYKeyboardToolbar.h"
 #import <ChameleonFramework/Chameleon.h>
 
-//rgb: 209 211 216
-static NSString * const kNativeKeyboardColorHexString = @"#d1d3d8";
+//rgb: 208 210 216
+static NSString * const kNativeKeyboardColorHexString = @"#d0d2d8";
 static const CGFloat kToolbarHeight = 40.0f;
 static const CGFloat kToolbarContentHorizontalInset = 8.0f;
 static const CGFloat kToolbarContentVerticalInset = 6.0f;

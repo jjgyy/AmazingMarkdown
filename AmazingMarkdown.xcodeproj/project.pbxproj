@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950EF227EC45B009FD493 /* AMFileTableController.m */; };
+		180950F5227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950F3227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.m */; };
+		180950F6227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950F4227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.m */; };
 		1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA442272EC8C00E08D43 /* AppDelegate.m */; };
 		1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
 		1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */; };
@@ -15,6 +18,7 @@
 		1842EA562272EC8C00E08D43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA552272EC8C00E08D43 /* main.m */; };
 		1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */; };
 		1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA642272EDB300E08D43 /* AMPreviewController.swift */; };
+		18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175A6227F5691007581F4 /* AMRootNavigationController.m */; };
 		18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */; };
 		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
 		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
@@ -22,10 +26,18 @@
 		18F4262D2274D28E002EBDDD /* MarkdownTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F426272274D28D002EBDDD /* MarkdownTokens.m */; };
 		18F4262E2274D28E002EBDDD /* MarkdownTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4262B2274D28D002EBDDD /* MarkdownTokenizer.m */; };
 		18F4262F2274D28E002EBDDD /* NSAttributedStringMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4262C2274D28D002EBDDD /* NSAttributedStringMarkdownParser.m */; };
+		18F4263522757B53002EBDDD /* DYMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4263422757B53002EBDDD /* DYMarkdownParser.m */; };
+		18F4D24F2276052F00A2123B /* AMYYMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */; };
 		52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180950EE227EC45B009FD493 /* AMFileTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFileTableController.h; sourceTree = "<group>"; };
+		180950EF227EC45B009FD493 /* AMFileTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileTableController.m; sourceTree = "<group>"; };
+		180950F1227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMMarkdownFile+CoreDataProperties.h"; sourceTree = "<group>"; };
+		180950F2227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMMarkdownFile+CoreDataClass.h"; sourceTree = "<group>"; };
+		180950F3227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFile+CoreDataClass.m"; sourceTree = "<group>"; };
+		180950F4227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFile+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1842EA432272EC8C00E08D43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1842EA442272EC8C00E08D43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,6 +51,8 @@
 		1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMEdittingContentController.h; sourceTree = "<group>"; };
 		1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMEdittingContentController.m; sourceTree = "<group>"; };
 		1842EA642272EDB300E08D43 /* AMPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMPreviewController.swift; sourceTree = "<group>"; };
+		18B175A5227F5691007581F4 /* AMRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRootNavigationController.h; sourceTree = "<group>"; };
+		18B175A6227F5691007581F4 /* AMRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRootNavigationController.m; sourceTree = "<group>"; };
 		18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardToolbarFactory.m; sourceTree = "<group>"; };
 		18F4260B22744C67002EBDDD /* AMKeyboardToolbarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMKeyboardToolbarFactory.h; sourceTree = "<group>"; };
 		18F4261B22747281002EBDDD /* DYKeyboardToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYKeyboardToolbar.h; sourceTree = "<group>"; };
@@ -53,6 +67,10 @@
 		18F4262A2274D28D002EBDDD /* MarkdownTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownTokens.h; sourceTree = "<group>"; };
 		18F4262B2274D28D002EBDDD /* MarkdownTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokenizer.m; sourceTree = "<group>"; };
 		18F4262C2274D28D002EBDDD /* NSAttributedStringMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringMarkdownParser.m; sourceTree = "<group>"; };
+		18F4263322757B53002EBDDD /* DYMarkdownParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYMarkdownParser.h; sourceTree = "<group>"; };
+		18F4263422757B53002EBDDD /* DYMarkdownParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYMarkdownParser.m; sourceTree = "<group>"; };
+		18F4D24D2276052F00A2123B /* AMYYMarkdownParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMYYMarkdownParser.h; sourceTree = "<group>"; };
+		18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMYYMarkdownParser.m; sourceTree = "<group>"; };
 		51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.debug.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
 		53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazingMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.release.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +97,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		180950EC227EC2FE009FD493 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				180950F1227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.h */,
+				180950F2227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.h */,
+				180950F3227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.m */,
+				180950F4227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		180950ED227EC32C009FD493 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				18F4D24D2276052F00A2123B /* AMYYMarkdownParser.h */,
+				18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
 		1842EA372272EC8C00E08D43 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +141,8 @@
 		1842EA422272EC8C00E08D43 /* AmazingMarkdown */ = {
 			isa = PBXGroup;
 			children = (
+				180950EC227EC2FE009FD493 /* Models */,
+				180950ED227EC32C009FD493 /* Parsers */,
 				18F426252274995D002EBDDD /* Factories */,
 				187E52AB2274230F007D1B0E /* Controllers */,
 				1842EA542272EC8C00E08D43 /* Info.plist */,
@@ -132,6 +172,10 @@
 				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
 				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
 				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
+				180950EE227EC45B009FD493 /* AMFileTableController.h */,
+				180950EF227EC45B009FD493 /* AMFileTableController.m */,
+				18B175A5227F5691007581F4 /* AMRootNavigationController.h */,
+				18B175A6227F5691007581F4 /* AMRootNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +196,8 @@
 			children = (
 				18F42621227498AC002EBDDD /* DYMarkdownTextView.h */,
 				18F42622227498AC002EBDDD /* DYMarkdownTextView.m */,
+				18F4263322757B53002EBDDD /* DYMarkdownParser.h */,
+				18F4263422757B53002EBDDD /* DYMarkdownParser.m */,
 			);
 			path = DYMarkdownTextView;
 			sourceTree = "<group>";
@@ -301,8 +347,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F4263522757B53002EBDDD /* DYMarkdownParser.m in Sources */,
 				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
+				180950F6227EC47D009FD493 /* AMMarkdownFile+CoreDataProperties.m in Sources */,
+				18F4D24F2276052F00A2123B /* AMYYMarkdownParser.m in Sources */,
 				1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */,
 				18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */,
 				18F4262D2274D28E002EBDDD /* MarkdownTokens.m in Sources */,
@@ -311,7 +360,10 @@
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
 				18F4262E2274D28E002EBDDD /* MarkdownTokenizer.m in Sources */,
+				18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */,
+				180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
+				180950F5227EC47D009FD493 /* AMMarkdownFile+CoreDataClass.m in Sources */,
 				18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

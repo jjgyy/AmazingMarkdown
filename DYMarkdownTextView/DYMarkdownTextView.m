@@ -7,17 +7,29 @@
 //
 
 #import "DYMarkdownTextView.h"
+#import "DYMarkdownParser.h"
 
 @implementation DYMarkdownTextView
 
-- (BOOL)becomeFirstResponder {
-    [NSNotificationCenter.defaultCenter postNotificationName:@"DYMarkdownTextView.becomeFirstResponder" object:nil];
-    return [super becomeFirstResponder];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAttributedText) name:UITextViewTextDidChangeNotification object:nil];
 }
 
-- (BOOL)resignFirstResponder {
-    [NSNotificationCenter.defaultCenter postNotificationName:@"DYMarkdownTextView.resignFirstResponder" object:nil];
-    return [super resignFirstResponder];
+- (instancetype)init {
+    if (self = [super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAttributedText) name:UITextViewTextDidChangeNotification object:nil];
+    }
+    return self;
+}
+
+- (void)updateAttributedText {
+    if (self.attributedText) {
+        NSRange range = NSMakeRange(0, self.attributedText.length);
+        NSMutableAttributedString * mutableAttributed = [self.attributedText mutableCopy];
+        [DYMarkdownParser.sharedParser parseText:mutableAttributed selectedRange:&range];
+        self.attributedText = mutableAttributed;
+    }
 }
 
 @end

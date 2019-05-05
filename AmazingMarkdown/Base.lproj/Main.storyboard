@@ -1,56 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wzv-c6-2Mf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wzv-c6-2Mf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Root Navigation Controller-->
         <scene sceneID="Sx6-Eg-zlK">
             <objects>
-                <navigationController id="Wzv-c6-2Mf" sceneMemberID="viewController">
+                <navigationController id="Wzv-c6-2Mf" customClass="AMRootNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JZn-IF-I2D">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="30b-XT-qer" kind="relationship" relationship="rootViewController" id="EyK-9w-jog"/>
+                        <segue destination="9UW-kQ-Yn7" kind="relationship" relationship="rootViewController" id="nDM-Ap-2RS"/>
+                        <segue destination="Npt-qk-VKj" kind="show" identifier="PreviewMarkdownFileSegue" id="vAv-7U-hS9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4al-Hf-zLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-883" y="-247"/>
+            <point key="canvasLocation" x="-1642" y="-233"/>
+        </scene>
+        <!--File Table Controller-->
+        <scene sceneID="2C9-3w-k4T">
+            <objects>
+                <tableViewController id="9UW-kQ-Yn7" customClass="AMFileTableController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eBE-jr-L4p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FileTableCell" textLabel="r6l-bO-Y8B" detailTextLabel="rkL-0K-Zhy" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="spm-Kc-WZy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="spm-Kc-WZy" id="1PP-rH-KI0">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r6l-bO-Y8B">
+                                            <rect key="frame" x="16" y="25" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rkL-0K-Zhy">
+                                            <rect key="frame" x="16" y="48.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="30b-XT-qer" kind="show" identifier="EditFileSegue" id="cny-1f-y8w"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9UW-kQ-Yn7" id="bYU-KI-f5I"/>
+                            <outlet property="delegate" destination="9UW-kQ-Yn7" id="y98-Hs-WLD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NuA-ox-Fq7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="c3D-Kr-ZfF">
+                            <connections>
+                                <segue destination="30b-XT-qer" kind="show" id="l4f-Nt-8zM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJi-6z-EAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="-233.43328335832086"/>
         </scene>
         <!--Editting Content Controller-->
         <scene sceneID="aW8-ZK-oWN">
             <objects>
                 <viewController id="30b-XT-qer" customClass="AMEdittingContentController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Deh-4G-wOy" customClass="DYMarkdownTextView">
+                    <view key="view" contentMode="scaleToFill" id="Deh-4G-wOy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBM-vx-MbZ" customClass="YYTextView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="BFW-rt-wAr" firstAttribute="trailing" secondItem="zBM-vx-MbZ" secondAttribute="trailing" id="B74-SF-I7t"/>
+                            <constraint firstItem="zBM-vx-MbZ" firstAttribute="leading" secondItem="BFW-rt-wAr" secondAttribute="leading" id="T1O-2p-tfR"/>
+                            <constraint firstItem="BFW-rt-wAr" firstAttribute="bottom" secondItem="zBM-vx-MbZ" secondAttribute="bottom" id="iDz-1G-a5N"/>
+                            <constraint firstItem="zBM-vx-MbZ" firstAttribute="top" secondItem="BFW-rt-wAr" secondAttribute="top" id="jWV-X9-34S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BFW-rt-wAr"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="igy-5t-RHF" appends="YES" id="uEC-JZ-Irk"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="pt7-Yd-Ezr">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="ycx-Ev-fxt">
                             <connections>
-                                <segue destination="Npt-qk-VKj" kind="show" id="dfF-MW-Wg9"/>
+                                <segue destination="Npt-qk-VKj" kind="show" identifier="PreviewMarkdownSegue" id="dfF-MW-Wg9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mainTextView" destination="Deh-4G-wOy" id="chV-4W-vxB"/>
+                        <outlet property="mainTextView" destination="zBM-vx-MbZ" id="4oc-yN-lTd"/>
                         <outlet property="navigationItem" destination="pt7-Yd-Ezr" id="s7x-Zg-Oia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hs-NJ-elq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="igy-5t-RHF">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightEdgePanGesHandler:" destination="30b-XT-qer" id="Sps-mX-2sQ"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-42" y="-248"/>
+            <point key="canvasLocation" x="39" y="-233"/>
         </scene>
         <!--Preview Controller-->
         <scene sceneID="R8g-vN-wpQ">
@@ -68,7 +147,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwD-Dd-2db" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="-248"/>
+            <point key="canvasLocation" x="1" y="766"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vAv-7U-hS9"/>
+        <segue reference="cny-1f-y8w"/>
+    </inferredMetricsTieBreakers>
 </document>

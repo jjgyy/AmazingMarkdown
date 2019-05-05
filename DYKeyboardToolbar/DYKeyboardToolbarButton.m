@@ -55,7 +55,7 @@ static const CGFloat kButtonTitleFontSize = 22.0f;
     CGSize sizeOfText = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:kButtonTitleFontSize]}];
     if (self = [super initWithFrame:CGRectMake(0.0f, 0.0f, sizeOfText.width + kButtonContentHorizontalInset, sizeOfText.height + kButtonContentVerticalInset)]) {
         self->_title = title;
-        self.backgroundColor = UIColor.clearColor;
+        self.backgroundColor = UIColor.whiteColor;
         self.layer.cornerRadius = kButtonCornerRadius;
         [self setTitle:self.title forState:UIControlStateNormal];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -78,16 +78,6 @@ static const CGFloat kButtonTitleFontSize = 22.0f;
 
 - (void)triggerEventHandler {
     self.eventHandler();
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.backgroundColor = UIColor.whiteColor;
-    [super touchesBegan:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.backgroundColor = UIColor.clearColor;
-    [super touchesEnded:touches withEvent:event];
 }
 
 @end
