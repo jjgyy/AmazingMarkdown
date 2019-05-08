@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "AMExternalMarkdownFile.h"
 
 @interface AppDelegate ()
 
@@ -22,15 +23,13 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData * data = [NSData dataWithContentsOfURL:url];
-        NSString * markdownString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        AMExternalMarkdownFile * markdownFile = [AMExternalMarkdownFile fileWithFileName:url.lastPathComponent fileData:[NSData dataWithContentsOfURL:url]];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.window.rootViewController performSegueWithIdentifier:@"PreviewMarkdownFileSegue" sender:markdownString];
+            [self.window.rootViewController performSegueWithIdentifier:@"PreviewMarkdownFileSegue" sender:markdownFile];
         });
+        [NSFileManager.defaultManager removeItemAtURL:url error:nil];
     });
-    
     return YES;
 }
 

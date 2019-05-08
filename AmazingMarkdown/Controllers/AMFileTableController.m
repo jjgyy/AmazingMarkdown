@@ -10,10 +10,12 @@
 #import "AMEdittingContentController.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "AMMarkdownFile+CoreDataClass.h"
+#import "AMMarkdownFileTableCell.h"
+#import "Chameleon.h"
 
 @interface AMFileTableController ()
 
-@property(nonatomic, strong) NSMutableArray * fileArray;
+@property(nonatomic, strong) NSMutableArray<AMMarkdownFile *> * fileArray;
 
 @end
 
@@ -21,7 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self->_fileArray = [[AMMarkdownFile MR_findAll] mutableCopy];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self->_fileArray = [[AMMarkdownFile MR_findAllSortedBy:@"creationDate" ascending:NO] mutableCopy];
+    [self.tableView reloadData];
+    [super viewWillAppear:animated];
 }
 
 
@@ -35,9 +42,14 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileTableCell" forIndexPath:indexPath];
+    AMMarkdownFileTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileTableCell" forIndexPath:indexPath];
     AMMarkdownFile * file = (AMMarkdownFile *)(self->_fileArray[indexPath.row]);
-    cell.textLabel.text = file.title;
+    cell.titleLabel.text = [file.title isEqualToString:@""] ? NSLocalizedString(@"untitled", nil) : file.title;
+    cell.titleLabel.textColor = [file.title isEqualToString:@""] ? UIColor.flatBlueColor : UIColor.blackColor;
+    cell.outlineLabel.text = [file.summary isEqualToString:@""] ? NSLocalizedString(@"no summary", nil) : file.summary;
+    NSDateFormatter * dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yy/M/d H:mm"];
+    cell.dateLabel.text = [dateFormatter stringFromDate:file.modifiedDate];
     return cell;
 }
 
@@ -56,18 +68,22 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 78.0f;
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"EditFileSegue"]) {
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
         [destinationViewController loadFile:self->_fileArray[self.tableView.indexPathForSelectedRow.row]];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    self->_fileArray = [[AMMarkdownFile MR_findAll] mutableCopy];
-    [self.tableView reloadData];
-    [super viewWillAppear:animated];
+    else if ([segue.identifier isEqualToString:@"CreateFileSegue"]) {
+        AMMarkdownFile * newMarkdownFile = [AMMarkdownFile MR_createEntity];
+        newMarkdownFile.creationDate = [NSDate new];
+        AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
+        [destinationViewController loadFile:newMarkdownFile];
+    }
 }
 
 @end

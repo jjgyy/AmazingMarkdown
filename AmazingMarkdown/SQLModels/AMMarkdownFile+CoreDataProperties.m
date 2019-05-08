@@ -2,7 +2,7 @@
 //  AMMarkdownFile+CoreDataProperties.m
 //  AmazingMarkdown
 //
-//  Created by Apple on 2019/5/5.
+//  Created by Apple on 2019/5/8.
 //  Copyright © 2019 Young. All rights reserved.
 //
 //
@@ -15,13 +15,16 @@
 	return [NSFetchRequest fetchRequestWithEntityName:@"AMMarkdownFile"];
 }
 
-@dynamic title;
-@dynamic content;
-@dynamic date;
 @dynamic category;
-@dynamic tag;
+@dynamic content;
+@dynamic creationDate;
 @dynamic isHidden;
-@dynamic isRecycled;
 @dynamic isLocked;
+@dynamic isRecycled;
+@dynamic tag;
+@dynamic title;
+@dynamic modifiedDate;
+@dynamic summary;
+@dynamic viewingDate;
 
 @end

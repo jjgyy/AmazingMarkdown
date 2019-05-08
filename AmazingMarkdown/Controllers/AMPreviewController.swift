@@ -33,11 +33,27 @@ class AMPreviewController: UIViewController {
     }
     
     @objc
+    func clickSaveButtonHandler() {
+        let newMarkdownFile = AMMarkdownFile.mr_createEntity()
+        newMarkdownFile?.title = self.title
+        newMarkdownFile?.content = self.markdownString
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
     func load(markdown: String?) {
         self.markdownString = markdown
     }
     
-
+    @objc
+    func loadInFilePreviewMode(markdownFile: AMExternalMarkdownFile?) {
+        self.title = markdownFile?.fileName
+        guard let data = markdownFile?.fileData else { return }
+        self.markdownString = String(data: data, encoding: .utf8)
+        let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(clickSaveButtonHandler))
+        self.navigationItem.rightBarButtonItems = [saveButton]
+    }
     /*
     // MARK: - Navigation
 

@@ -8,6 +8,8 @@
 
 #import "AMRootNavigationController.h"
 #import "AmazingMarkdown-Swift.h"
+#import "AMExternalMarkdownFile.h"
+#import "Chameleon.h"
 
 @interface AMRootNavigationController ()
 
@@ -17,12 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationBar.tintColor = UIColor.flatBlackColor;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"PreviewMarkdownFileSegue"]) {
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
-        [destinationViewController loadWithMarkdown:(NSString *)sender];
+        [destinationViewController loadInFilePreviewModeWithMarkdownFile:(AMExternalMarkdownFile *)sender];
     }
 }
 

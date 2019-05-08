@@ -15,5 +15,6 @@ target 'AmazingMarkdown' do
   # pod 'RFKeyboardToolbar', '~> 1.3'
   pod 'ChameleonFramework'
   pod 'MagicalRecord'
+  pod 'JVFloatLabeledTextField'
 
 end
