@@ -8,3 +8,14 @@
 "untitled" = "未命名";
 "title placeholder" = "点击来命名";
 "no summary" = "(无摘要)";
+"preview" = "预览";
+"setting" = "设置";
+"theme setting" = "主题设置";
+"bright theme" = "亮色主题";
+"dark theme" = "深色主题";
+"shortcut list" = "快捷键列表";
+"other" = "其他";
+"restore" = "恢复";
+"restore defaults" = "恢复为默认";
+"add shortcut" = "添加快捷键...";
+"enter shortcut content" = "输入快捷键内容...";

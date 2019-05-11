@@ -8,3 +8,14 @@
 "untitled" = "untitled";
 "title placeholder" = "click to name";
 "no summary" = "(no summary)";
+"preview" = "Preview";
+"setting" = "Setting";
+"theme setting" = "Theme Setting";
+"bright theme" = "Bright Theme";
+"dark theme" = "Dark Theme";
+"shortcut list" = "Shortcut List";
+"other" = "Other";
+"restore" = "Restore";
+"restore defaults" = "Restore Defaults";
+"add shortcut" = "Add Shortcut...";
+"enter shortcut content" = "Enter Shortcut Content...";

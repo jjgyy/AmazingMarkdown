@@ -1,17 +1,21 @@
+
+/* Class = "UITableViewController"; title = "Add Shortcut"; ObjectID = "0Ar-Tr-BbS"; */
+"0Ar-Tr-BbS.title" = "Add Shortcut";
+
 /* Class = "UILabel"; text = "Theme Setting"; ObjectID = "6Wr-Dj-Epz"; */
-"6Wr-Dj-Epz.text" = "主题设置";
+"6Wr-Dj-Epz.text" = "Theme Setting";
 
 /* Class = "UILabel"; text = "Keyboard Setting"; ObjectID = "AL7-83-Yx7"; */
-"AL7-83-Yx7.text" = "键盘设置";
+"AL7-83-Yx7.text" = "Keyboard Setting";
 
 /* Class = "UILabel"; text = "date"; ObjectID = "B0z-LB-Qa6"; */
 "B0z-LB-Qa6.text" = "date";
 
 /* Class = "UITableViewController"; title = "Setting"; ObjectID = "E0P-Sr-3ma"; */
-"E0P-Sr-3ma.title" = "设置";
+"E0P-Sr-3ma.title" = "Setting";
 
 /* Class = "UITableViewSection"; headerTitle = "Basic Settings"; ObjectID = "HVu-gv-dQI"; */
-"HVu-gv-dQI.headerTitle" = "基本设置";
+"HVu-gv-dQI.headerTitle" = "Basic Settings";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "KSy-gZ-pca"; */
 "KSy-gZ-pca.text" = "Title";
@@ -19,20 +23,26 @@
 /* Class = "UILabel"; text = "summary"; ObjectID = "Ky0-xA-CuC"; */
 "Ky0-xA-CuC.text" = "summary";
 
+/* Class = "UILabel"; text = "Title"; ObjectID = "dHP-5C-rla"; */
+"dHP-5C-rla.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "eF7-qc-30M"; */
+"eF7-qc-30M.text" = "Title";
+
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
-"hpt-vm-2ZO.title" = "主题设置";
+"hpt-vm-2ZO.title" = "Theme Setting";
 
 /* Class = "UITableViewSection"; headerTitle = "Advanced Settings"; ObjectID = "pYE-d9-LQP"; */
-"pYE-d9-LQP.headerTitle" = "高级设置";
+"pYE-d9-LQP.headerTitle" = "Advanced Settings";
 
 /* Class = "UIBarButtonItem"; title = "Setting"; ObjectID = "qHI-VQ-HLn"; */
-"qHI-VQ-HLn.title" = "设置";
+"qHI-VQ-HLn.title" = "Setting";
 
 /* Class = "UITableViewSection"; headerTitle = "Shortcut Content"; ObjectID = "sLe-sA-dHT"; */
-"sLe-sA-dHT.headerTitle" = "快捷键内容";
+"sLe-sA-dHT.headerTitle" = "Shortcut Content";
 
 /* Class = "UITableViewController"; title = "Keyboard Setting"; ObjectID = "uIi-9u-Cvb"; */
-"uIi-9u-Cvb.title" = "键盘设置";
+"uIi-9u-Cvb.title" = "Keyboard Setting";
 
 /* Class = "UIBarButtonItem"; title = "Preview"; ObjectID = "ycx-Ev-fxt"; */
-"ycx-Ev-fxt.title" = "预览";
+"ycx-Ev-fxt.title" = "Preview";

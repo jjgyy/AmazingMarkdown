@@ -10,6 +10,21 @@
 		1806014722830BD4007D4298 /* AMMarkdownFileTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806014622830BD4007D4298 /* AMMarkdownFileTableCell.m */; };
 		1806014C22832928007D4298 /* AMMarkdownFile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806014A22832928007D4298 /* AMMarkdownFile+CoreDataClass.m */; };
 		1806014D22832928007D4298 /* AMMarkdownFile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806014B22832928007D4298 /* AMMarkdownFile+CoreDataProperties.m */; };
+		1806015122841A57007D4298 /* AMSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806015022841A57007D4298 /* AMSettingTableController.m */; };
+		1806015E2284207D007D4298 /* AMThemeSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806015D2284207D007D4298 /* AMThemeSettingTableController.m */; };
+		1806016A22847BBA007D4298 /* UITableViewController+DYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806016922847BBA007D4298 /* UITableViewController+DYTheme.m */; };
+		1806016D22847D1A007D4298 /* DYTheme+Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806016C22847D1A007D4298 /* DYTheme+Themes.m */; };
+		180601742284830C007D4298 /* DYTheme+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601732284830C007D4298 /* DYTheme+Class.m */; };
+		18060177228488F3007D4298 /* UITableViewCell+DYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 18060176228488F3007D4298 /* UITableViewCell+DYTheme.m */; };
+		1806017A2284894C007D4298 /* UIView+DYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601792284894C007D4298 /* UIView+DYTheme.m */; };
+		1806017D22848965007D4298 /* UIViewController+DYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806017C22848965007D4298 /* UIViewController+DYTheme.m */; };
+		18060185228670B5007D4298 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806017F228670B4007D4298 /* MarkdownView.swift */; };
+		18060186228670B5007D4298 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 18060182228670B5007D4298 /* index.html */; };
+		18060187228670B5007D4298 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 18060183228670B5007D4298 /* main.css */; };
+		18060188228670B5007D4298 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 18060184228670B5007D4298 /* main.js */; };
+		1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806018B2286AFBC007D4298 /* DYProgressView.m */; };
+		180601942286D04D007D4298 /* AMKeyboardSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */; };
+		180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */; };
 		180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950EF227EC45B009FD493 /* AMFileTableController.m */; };
 		1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA442272EC8C00E08D43 /* AppDelegate.m */; };
 		1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
@@ -28,7 +43,6 @@
 		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
 		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
 		18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F42622227498AC002EBDDD /* DYMarkdownTextView.m */; };
-		18F4D24F2276052F00A2123B /* AMYYMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */; };
 		52578B2731811246716E0FA7 /* Pods_AmazingMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +54,35 @@
 		1806014A22832928007D4298 /* AMMarkdownFile+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFile+CoreDataClass.m"; sourceTree = "<group>"; };
 		1806014B22832928007D4298 /* AMMarkdownFile+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFile+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1806014E2283396F007D4298 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1806014F22841A57007D4298 /* AMSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMSettingTableController.h; sourceTree = "<group>"; };
+		1806015022841A57007D4298 /* AMSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMSettingTableController.m; sourceTree = "<group>"; };
+		1806015522841D06007D4298 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1806015C2284207D007D4298 /* AMThemeSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMThemeSettingTableController.h; sourceTree = "<group>"; };
+		1806015D2284207D007D4298 /* AMThemeSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMThemeSettingTableController.m; sourceTree = "<group>"; };
+		18060161228425AC007D4298 /* DYTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYTheme.h; sourceTree = "<group>"; };
+		1806016822847BBA007D4298 /* UITableViewController+DYTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+DYTheme.h"; sourceTree = "<group>"; };
+		1806016922847BBA007D4298 /* UITableViewController+DYTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+DYTheme.m"; sourceTree = "<group>"; };
+		1806016B22847D1A007D4298 /* DYTheme+Themes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DYTheme+Themes.h"; sourceTree = "<group>"; };
+		1806016C22847D1A007D4298 /* DYTheme+Themes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DYTheme+Themes.m"; sourceTree = "<group>"; };
+		180601722284830C007D4298 /* DYTheme+Class.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DYTheme+Class.h"; sourceTree = "<group>"; };
+		180601732284830C007D4298 /* DYTheme+Class.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DYTheme+Class.m"; sourceTree = "<group>"; };
+		18060175228488F3007D4298 /* UITableViewCell+DYTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+DYTheme.h"; sourceTree = "<group>"; };
+		18060176228488F3007D4298 /* UITableViewCell+DYTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+DYTheme.m"; sourceTree = "<group>"; };
+		180601782284894C007D4298 /* UIView+DYTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DYTheme.h"; sourceTree = "<group>"; };
+		180601792284894C007D4298 /* UIView+DYTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYTheme.m"; sourceTree = "<group>"; };
+		1806017B22848965007D4298 /* UIViewController+DYTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DYTheme.h"; sourceTree = "<group>"; };
+		1806017C22848965007D4298 /* UIViewController+DYTheme.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DYTheme.m"; sourceTree = "<group>"; };
+		1806017F228670B4007D4298 /* MarkdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
+		18060182228670B5007D4298 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		18060183228670B5007D4298 /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		18060184228670B5007D4298 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		1806018A2286AFBC007D4298 /* DYProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYProgressView.h; sourceTree = "<group>"; };
+		1806018B2286AFBC007D4298 /* DYProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYProgressView.m; sourceTree = "<group>"; };
+		180601922286D04D007D4298 /* AMKeyboardSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMKeyboardSettingTableController.h; sourceTree = "<group>"; };
+		180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardSettingTableController.m; sourceTree = "<group>"; };
+		180601972286EE47007D4298 /* AMKeyboardSettingAddShortcutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMKeyboardSettingAddShortcutController.h; sourceTree = "<group>"; };
+		180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardSettingAddShortcutController.m; sourceTree = "<group>"; };
+		1806019E2286F7AF007D4298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		180950EE227EC45B009FD493 /* AMFileTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFileTableController.h; sourceTree = "<group>"; };
 		180950EF227EC45B009FD493 /* AMFileTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileTableController.m; sourceTree = "<group>"; };
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +101,6 @@
 		18B175A5227F5691007581F4 /* AMRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRootNavigationController.h; sourceTree = "<group>"; };
 		18B175A6227F5691007581F4 /* AMRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRootNavigationController.m; sourceTree = "<group>"; };
 		18B175AB227FE093007581F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		18B175AD227FE0B2007581F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		18B175AE227FE0B2007581F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		18B175AF227FE0B2007581F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		18B175B3227FE5BB007581F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -75,8 +117,6 @@
 		18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYKeyboardToolbarButton.m; sourceTree = "<group>"; };
 		18F42621227498AC002EBDDD /* DYMarkdownTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYMarkdownTextView.h; sourceTree = "<group>"; };
 		18F42622227498AC002EBDDD /* DYMarkdownTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYMarkdownTextView.m; sourceTree = "<group>"; };
-		18F4D24D2276052F00A2123B /* AMYYMarkdownParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMYYMarkdownParser.h; sourceTree = "<group>"; };
-		18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMYYMarkdownParser.m; sourceTree = "<group>"; };
 		51A1A8AD11C0295DC9F65506 /* Pods-AmazingMarkdown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.debug.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.debug.xcconfig"; sourceTree = "<group>"; };
 		53131E5F1674063BCFD176F8 /* Pods_AmazingMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmazingMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935B7E21C6DD5BB93036404 /* Pods-AmazingMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmazingMarkdown.release.xcconfig"; path = "Target Support Files/Pods-AmazingMarkdown/Pods-AmazingMarkdown.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +143,62 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1806016622847A20007D4298 /* DYTheme */ = {
+			isa = PBXGroup;
+			children = (
+				18060161228425AC007D4298 /* DYTheme.h */,
+				180601722284830C007D4298 /* DYTheme+Class.h */,
+				180601732284830C007D4298 /* DYTheme+Class.m */,
+				1806016B22847D1A007D4298 /* DYTheme+Themes.h */,
+				1806016C22847D1A007D4298 /* DYTheme+Themes.m */,
+				180601782284894C007D4298 /* UIView+DYTheme.h */,
+				180601792284894C007D4298 /* UIView+DYTheme.m */,
+				1806017B22848965007D4298 /* UIViewController+DYTheme.h */,
+				1806017C22848965007D4298 /* UIViewController+DYTheme.m */,
+				1806016822847BBA007D4298 /* UITableViewController+DYTheme.h */,
+				1806016922847BBA007D4298 /* UITableViewController+DYTheme.m */,
+				18060175228488F3007D4298 /* UITableViewCell+DYTheme.h */,
+				18060176228488F3007D4298 /* UITableViewCell+DYTheme.m */,
+			);
+			path = DYTheme;
+			sourceTree = "<group>";
+		};
+		1806017E228670B4007D4298 /* MarkdownView */ = {
+			isa = PBXGroup;
+			children = (
+				1806017F228670B4007D4298 /* MarkdownView.swift */,
+				18060180228670B5007D4298 /* webassets */,
+			);
+			path = MarkdownView;
+			sourceTree = "<group>";
+		};
+		18060180228670B5007D4298 /* webassets */ = {
+			isa = PBXGroup;
+			children = (
+				18060181228670B5007D4298 /* dist */,
+			);
+			path = webassets;
+			sourceTree = "<group>";
+		};
+		18060181228670B5007D4298 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				18060182228670B5007D4298 /* index.html */,
+				18060183228670B5007D4298 /* main.css */,
+				18060184228670B5007D4298 /* main.js */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
+		180601892286AF7F007D4298 /* DYProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				1806018A2286AFBC007D4298 /* DYProgressView.h */,
+				1806018B2286AFBC007D4298 /* DYProgressView.m */,
+			);
+			path = DYProgressView;
+			sourceTree = "<group>";
+		};
 		180950EC227EC2FE009FD493 /* SQLModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,19 +210,13 @@
 			path = SQLModels;
 			sourceTree = "<group>";
 		};
-		180950ED227EC32C009FD493 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				18F4D24D2276052F00A2123B /* AMYYMarkdownParser.h */,
-				18F4D24E2276052F00A2123B /* AMYYMarkdownParser.m */,
-			);
-			path = Parsers;
-			sourceTree = "<group>";
-		};
 		1842EA372272EC8C00E08D43 = {
 			isa = PBXGroup;
 			children = (
 				1806014E2283396F007D4298 /* README.md */,
+				180601892286AF7F007D4298 /* DYProgressView */,
+				1806017E228670B4007D4298 /* MarkdownView */,
+				1806016622847A20007D4298 /* DYTheme */,
 				18F42624227498DE002EBDDD /* DYMarkdownTextView */,
 				18F4261A227471EC002EBDDD /* DYKeyboardToolbar */,
 				1842EA422272EC8C00E08D43 /* AmazingMarkdown */,
@@ -150,7 +240,6 @@
 				18B175C022801435007581F4 /* Models */,
 				18B175B6227FE9FB007581F4 /* Views */,
 				180950EC227EC2FE009FD493 /* SQLModels */,
-				180950ED227EC32C009FD493 /* Parsers */,
 				18F426252274995D002EBDDD /* Factories */,
 				187E52AB2274230F007D1B0E /* Controllers */,
 				1842EA542272EC8C00E08D43 /* Info.plist */,
@@ -179,10 +268,18 @@
 		187E52AB2274230F007D1B0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
-				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
 				180950EE227EC45B009FD493 /* AMFileTableController.h */,
 				180950EF227EC45B009FD493 /* AMFileTableController.m */,
+				1806014F22841A57007D4298 /* AMSettingTableController.h */,
+				1806015022841A57007D4298 /* AMSettingTableController.m */,
+				1806015C2284207D007D4298 /* AMThemeSettingTableController.h */,
+				1806015D2284207D007D4298 /* AMThemeSettingTableController.m */,
+				180601922286D04D007D4298 /* AMKeyboardSettingTableController.h */,
+				180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */,
+				180601972286EE47007D4298 /* AMKeyboardSettingAddShortcutController.h */,
+				180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */,
+				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
+				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
 				18B175A5227F5691007581F4 /* AMRootNavigationController.h */,
 				18B175A6227F5691007581F4 /* AMRootNavigationController.m */,
 				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
@@ -311,8 +408,11 @@
 				18B175B2227FE5BB007581F4 /* Localizable.strings in Resources */,
 				1842EA532272EC8C00E08D43 /* LaunchScreen.storyboard in Resources */,
 				18B175AA227FE093007581F4 /* InfoPlist.strings in Resources */,
+				18060187228670B5007D4298 /* main.css in Resources */,
+				18060186228670B5007D4298 /* index.html in Resources */,
 				1842EA502272EC8C00E08D43 /* Assets.xcassets in Resources */,
 				1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */,
+				18060188228670B5007D4298 /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,22 +465,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1806017A2284894C007D4298 /* UIView+DYTheme.m in Sources */,
 				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
 				18B175BF227FEDDD007581F4 /* AMCenterPlaceholderTextField.m in Sources */,
 				1806014D22832928007D4298 /* AMMarkdownFile+CoreDataProperties.m in Sources */,
-				18F4D24F2276052F00A2123B /* AMYYMarkdownParser.m in Sources */,
+				1806017D22848965007D4298 /* UIViewController+DYTheme.m in Sources */,
 				1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */,
 				1806014722830BD4007D4298 /* AMMarkdownFileTableCell.m in Sources */,
+				180601942286D04D007D4298 /* AMKeyboardSettingTableController.m in Sources */,
 				18B175C922801551007581F4 /* AMExternalMarkdownFile.m in Sources */,
 				18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */,
+				1806015122841A57007D4298 /* AMSettingTableController.m in Sources */,
+				1806016A22847BBA007D4298 /* UITableViewController+DYTheme.m in Sources */,
 				18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */,
+				18060185228670B5007D4298 /* MarkdownView.swift in Sources */,
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
+				180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */,
 				18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */,
 				180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
+				180601742284830C007D4298 /* DYTheme+Class.m in Sources */,
 				1806014C22832928007D4298 /* AMMarkdownFile+CoreDataClass.m in Sources */,
+				18060177228488F3007D4298 /* UITableViewCell+DYTheme.m in Sources */,
+				1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */,
+				1806015E2284207D007D4298 /* AMThemeSettingTableController.m in Sources */,
+				1806016D22847D1A007D4298 /* DYTheme+Themes.m in Sources */,
 				18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +503,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				1842EA4A2272EC8C00E08D43 /* Base */,
-				18B175AD227FE0B2007581F4 /* zh-Hans */,
+				1806015522841D06007D4298 /* zh-Hans */,
+				1806019E2286F7AF007D4298 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

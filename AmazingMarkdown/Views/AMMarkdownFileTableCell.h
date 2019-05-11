@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DYTheme.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *outlineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (void)setTheme:(DYTheme *)theme;
 
 @end
 

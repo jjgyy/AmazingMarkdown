@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AMCenterPlaceholderTextField : UITextField
 
-- (instancetype)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder;
+- (instancetype)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder fontSize:(CGFloat)fontSize;
 
 @end
 

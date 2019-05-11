@@ -13,9 +13,12 @@
 #import "AMCenterPlaceholderTextField.h"
 #import "MBProgressHUD.h"
 #import "DYMarkdownTextView.h"
+#import "DYTheme.h"
 
 static const CGFloat kMainTextViewInitialFontSize = 17.0f;
 static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
+
+NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToEdittingContentControllerNotification";
 
 @interface AMEdittingContentController ()
 
@@ -29,12 +32,14 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
 @end
 
 @implementation AMEdittingContentController {
-    BOOL _isGoingToPreview;
+    NSObject * _keyboardShowObserver;
+    NSObject * _keyboardHideObserver;
+    BOOL _isReadyToQuit;
 }
 
 - (IBAction)rightEdgePanGesHandler:(UIScreenEdgePanGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
-        [self performSegueWithIdentifier:@"PreviewMarkdownSegue" sender:self];
+        [self performSegueWithIdentifier:@"PreviewMarkdownSegue" sender:nil];
     }
 }
 
@@ -43,7 +48,9 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     
     // 配置_mainTextView
     [self->_mainTextView setFont:[UIFont systemFontOfSize:kMainTextViewInitialFontSize weight:kMainTextViewInitialFontWeight]];
-    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView];
+    
+    // 为_mainTextView添加键盘工具栏
+    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView withShortcutStrings:[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey]];
     
     // 配置_doneButton
     self->_doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(clickDoneButtonHandler)];
@@ -67,63 +74,81 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     });
     
     // 配置_titleTextField, 依赖_currentFile
-    self->_titleTextField = [[AMCenterPlaceholderTextField alloc] initWithFrame:CGRectMake(0, 0, 200, 35) placeholder:NSLocalizedString(@"title placeholder", nil)];
+    self->_titleTextField = [[AMCenterPlaceholderTextField alloc] initWithFrame:CGRectMake(0, 0, 200, 35) placeholder:NSLocalizedString(@"title placeholder", nil) fontSize:UIFont.labelFontSize];
     if (![self->_currentFile.title isEqualToString:@""]) {
         self->_titleTextField.text = self->_currentFile.title;
     }
     self.navigationItem.titleView = self->_titleTextField;
     
-    // 配置_isGoingToPreview, 用于控制切换页面时空文件是否删除
-    self->_isGoingToPreview = NO;
+    // 配置_isReadyToQuit
+    self->_isReadyToQuit = YES;
+    
+    [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     // 观察键盘弹出
-    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardWillShowNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+    self->_keyboardShowObserver = [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardWillShowNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         CGFloat keyboardHeight = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
-        CGRect rect = self.mainTextView.frame;
-        rect.size.height = UIScreen.mainScreen.bounds.size.height - self.view.safeAreaInsets.top - keyboardHeight;
+        CGRect rect = self->_mainTextView.frame;
+        rect.size.height = self.view.bounds.size.height - keyboardHeight;
         self->_mainTextView.frame = rect;
         [self showDoneButton];
     }];
-    
     // 观察键盘收起
-    [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardWillHideNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
-        CGRect rect = self.mainTextView.frame;
-        rect.size.height = UIScreen.mainScreen.bounds.size.height - self.view.safeAreaInsets.top;
+    self->_keyboardHideObserver = [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardWillHideNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        CGRect rect = self->_mainTextView.frame;
+        rect.size.height = self.view.bounds.size.height;
         self->_mainTextView.frame = rect;
         [self hideDoneButton];
     }];
-    [super viewWillAppear:YES];
+    
+    [super viewDidAppear:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    if (!self->_isGoingToPreview && [self->_titleTextField.text isEqualToString:@""] && [self->_mainTextView.text isEqualToString:@""]) {
-        [NSManagedObjectContext.MR_defaultContext deleteObject:self->_currentFile];
-        [NSManagedObjectContext.MR_defaultContext MR_saveToPersistentStoreAndWait];
-    }
-    self->_isGoingToPreview = NO;
+    // 将_mainTextView大小复原，隐藏_doneButton
+    CGRect rect = self->_mainTextView.frame;
+    rect.size.height = self.view.bounds.size.height;
+    self->_mainTextView.frame = rect;
+    [self hideDoneButton];
     
-    // 保存到数据库
-    self->_currentFile.title = [self->_titleTextField.text copy];
-    self->_currentFile.content = [self->_mainTextView.text copy];
-    self->_currentFile.summary = (self->_mainTextView.text.length > 40) ? [self->_mainTextView.text substringToIndex:40] : self->_mainTextView.text;
-    self->_currentFile.modifiedDate = [NSDate new];
+    if (self->_isReadyToQuit && [self->_titleTextField.text isEqualToString:@""] && [self->_mainTextView.text isEqualToString:@""]) {
+        // 如果没有内容, 则从数据库删除
+        [NSManagedObjectContext.MR_defaultContext deleteObject:self->_currentFile];
+    } else {
+        // 保存到数据库
+        self->_currentFile.title = [self->_titleTextField.text copy];
+        self->_currentFile.content = [self->_mainTextView.text copy];
+        NSMutableString * tempSummary = (self->_mainTextView.text.length > 40) ? [self->_mainTextView.text substringToIndex:40].mutableCopy : self->_mainTextView.text.mutableCopy;
+        for (NSUInteger index = 0; index < tempSummary.length; ++index) {
+            if ([tempSummary characterAtIndex:index] == '\n') {
+                [tempSummary replaceCharactersInRange:NSMakeRange(index, 1) withString:@" "];
+            }
+        }
+        self->_currentFile.summary = tempSummary;
+        self->_currentFile.modifiedDate = [NSDate new];
+    }
     [NSManagedObjectContext.MR_defaultContext MR_saveToPersistentStoreAndWait];
+    self->_isReadyToQuit = YES;
     
     // 移除键盘观察
-    [NSNotificationCenter.defaultCenter removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [NSNotificationCenter.defaultCenter removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [NSNotificationCenter.defaultCenter removeObserver:self->_keyboardShowObserver];
+    self->_keyboardShowObserver = nil;
+    [NSNotificationCenter.defaultCenter removeObserver:self->_keyboardHideObserver];
+    self->_keyboardHideObserver = nil;
     
     [self resignFirstResponderForSubviews];
     
     [super viewWillDisappear:animated];
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // segue触发view disappear, 防止触发删除空文件, 导致返回原页面后编辑空文件不被保存
+    self->_isReadyToQuit = NO;
     if ([segue.identifier isEqualToString:@"PreviewMarkdownSegue"]) {
-        self->_isGoingToPreview = YES;
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
         [destinationViewController loadWithMarkdown:self.mainTextView.text];
     }
@@ -158,8 +183,11 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     }
 }
 
-- (void)dealloc {
-    NSLog(@"释放了!!!!!!!!!!!!!!!!!!!!!!");
+- (void)setTheme:(DYTheme *)theme {
+    [super setTheme:theme];
+    self->_titleTextField.textColor = theme.navigationTintColor;
+    self->_mainTextView.backgroundColor = theme.textBackgroundColor;
+    self->_mainTextView.textColor = theme.textColor;
 }
 
 @end

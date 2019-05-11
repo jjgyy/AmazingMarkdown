@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const AMKeyboardToolbarShortcutStringsUserDefaultsKey;
+
 @interface AMKeyboardToolbarFactory : NSObject
 
-+ (void)addMarkdownInputToolbarFor:(UITextView *)textView;
+@property (class, nonatomic, readonly) NSArray<NSString *> * defaultMarkdownShortcutStrings;
+
++ (void)addMarkdownInputToolbarFor:(UITextView *)textView withShortcutStrings: (NSArray<NSString *> * _Nullable) shortcutStrings;
 
 @end
 

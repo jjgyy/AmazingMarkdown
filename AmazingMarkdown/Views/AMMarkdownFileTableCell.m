@@ -26,4 +26,11 @@
     // Configure the view for the selected state
 }
 
+- (void)setTheme:(DYTheme *)theme {
+    self.backgroundColor = theme.cellColor;
+    self.titleLabel.textColor = theme.cellTitleColor;
+    self.selectedBackgroundView = [[UIView alloc]initWithFrame:self.frame];
+    self.selectedBackgroundView.backgroundColor = theme.cellSelectedColor;
+}
+
 @end

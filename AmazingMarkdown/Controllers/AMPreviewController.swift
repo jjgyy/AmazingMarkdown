@@ -7,61 +7,77 @@
 //
 
 import UIKit
-import MarkdownView
 
 class AMPreviewController: UIViewController {
     
-    var markdownString: String? {
-        didSet(oldValue) {
-            if (self.markdownPreviewView != nil) {
-                self.markdownPreviewView.load(markdown: markdownString)
-            }
-        }
-    }
+    var markdownString: String?
+    var markdownFile: AMMarkdownFile?
+    var progressView: UIProgressView?
     
     @IBOutlet var markdownPreviewView: MarkdownView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.markdownPreviewView.load(markdown: markdownString)
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.6) {
-            DispatchQueue.main.async {
-                MBProgressHUD.hide(for: self.view, animated: true)
-            }
+        
+        // 加载markdown
+        self.markdownPreviewView.load(markdown: markdownString, enableImage: true)
+        
+        // 配置进度条, webView!依赖markdownPreviewView的load
+        let progressView = DYProgressView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.bounds.width, height: 2.0)), observeValueForKeyPath: "estimatedProgress", of: self.markdownPreviewView.webView!)
+        self.view.addSubview(progressView)
+        
+        // 设置背景色
+        self.view.backgroundColor = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].backgroundColor
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditFileSegue" {
+            let destination = segue.destination as! AMEdittingContentController
+            guard let markdownFile = self.markdownFile else { return }
+            destination.load(markdownFile)
         }
     }
+    
     
     @objc
     func clickSaveButtonHandler() {
         let newMarkdownFile = AMMarkdownFile.mr_createEntity()
         newMarkdownFile?.title = self.title
         newMarkdownFile?.content = self.markdownString
+        newMarkdownFile?.creationDate = Date()
+        newMarkdownFile?.modifiedDate = newMarkdownFile?.creationDate;
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
         self.navigationController?.popViewController(animated: true)
     }
     
     @objc
-    func load(markdown: String?) {
-        self.markdownString = markdown
+    func clickEditButtonHandler() {
+        guard let markdownFile = self.markdownFile else { return }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RedirectToEdittingContentControllerNotification"), object: nil, userInfo: ["markdownFile" : markdownFile])
     }
     
     @objc
-    func loadInFilePreviewMode(markdownFile: AMExternalMarkdownFile?) {
-        self.title = markdownFile?.fileName
-        guard let data = markdownFile?.fileData else { return }
-        self.markdownString = String(data: data, encoding: .utf8)
+    func load(markdown: String?) {
+        self.title = NSLocalizedString("preview", comment: "")
+        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + (markdown ?? "")
+    }
+    
+    @objc
+    func loadFile(markdownFile: AMMarkdownFile?) {
+        self.markdownFile = markdownFile
+        self.title = markdownFile?.title
+        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (markdownFile?.content ?? "")
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(clickEditButtonHandler))
+        self.navigationItem.rightBarButtonItems = [editButton]
+    }
+    
+    @objc
+    func loadExternalFile(externalFile: AMExternalMarkdownFile?) {
+        self.title = externalFile?.fileName
+        guard let data = externalFile?.fileData else { return }
+        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (String(data: data, encoding: .utf8) ?? "")
         let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(clickSaveButtonHandler))
         self.navigationItem.rightBarButtonItems = [saveButton]
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

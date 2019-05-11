@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const RedirectToEdittingContentControllerNotification;
+
 @interface AMEdittingContentController : UIViewController
 
 - (void)loadFile:(AMMarkdownFile *)file;

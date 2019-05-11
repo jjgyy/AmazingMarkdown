@@ -10,6 +10,8 @@
 #import "AmazingMarkdown-Swift.h"
 #import "AMExternalMarkdownFile.h"
 #import "Chameleon.h"
+#import "AMEdittingContentController.h"
+#import "DYTheme.h"
 
 @interface AMRootNavigationController ()
 
@@ -19,14 +21,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.tintColor = UIColor.flatBlackColor;
+    [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    
+    [NSNotificationCenter.defaultCenter addObserverForName:RedirectToEdittingContentControllerNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [self popToRootViewControllerAnimated:NO];
+        [self performSegueWithIdentifier:@"EditFileSegue" sender:note.userInfo[@"markdownFile"]];
+    }];
+    
+    [NSNotificationCenter.defaultCenter addObserverForName:DYThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+        [self popToRootViewControllerAnimated:YES];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"PreviewMarkdownFileSegue"]) {
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
-        [destinationViewController loadInFilePreviewModeWithMarkdownFile:(AMExternalMarkdownFile *)sender];
+        [destinationViewController loadExternalFileWithExternalFile:(AMExternalMarkdownFile *)sender];
     }
+    else if ([segue.identifier isEqualToString:@"EditFileSegue"]) {
+        AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
+        [destinationViewController loadFile:(AMMarkdownFile *)sender];
+    }
+}
+
+- (void)setTheme:(DYTheme *)theme {
+    self.navigationBar.tintColor = theme.navigationTintColor;
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:theme.navigationTintColor}];
+    self.navigationBar.barTintColor = theme.navigationBarColor;
 }
 
 @end
