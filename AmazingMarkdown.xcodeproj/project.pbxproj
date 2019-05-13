@@ -25,9 +25,11 @@
 		1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806018B2286AFBC007D4298 /* DYProgressView.m */; };
 		180601942286D04D007D4298 /* AMKeyboardSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */; };
 		180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */; };
+		180601A122897222007D4298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
+		180601A422897344007D4298 /* AMTemplateSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601A322897344007D4298 /* AMTemplateSettingTableController.m */; };
+		180601A722897376007D4298 /* AMCollationSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601A622897376007D4298 /* AMCollationSettingTableController.m */; };
 		180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950EF227EC45B009FD493 /* AMFileTableController.m */; };
 		1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA442272EC8C00E08D43 /* AppDelegate.m */; };
-		1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
 		1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */; };
 		1842EA502272EC8C00E08D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA4F2272EC8C00E08D43 /* Assets.xcassets */; };
 		1842EA532272EC8C00E08D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA512272EC8C00E08D43 /* LaunchScreen.storyboard */; };
@@ -82,7 +84,11 @@
 		180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardSettingTableController.m; sourceTree = "<group>"; };
 		180601972286EE47007D4298 /* AMKeyboardSettingAddShortcutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMKeyboardSettingAddShortcutController.h; sourceTree = "<group>"; };
 		180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardSettingAddShortcutController.m; sourceTree = "<group>"; };
-		1806019E2286F7AF007D4298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		180601A222897344007D4298 /* AMTemplateSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMTemplateSettingTableController.h; sourceTree = "<group>"; };
+		180601A322897344007D4298 /* AMTemplateSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMTemplateSettingTableController.m; sourceTree = "<group>"; };
+		180601A522897376007D4298 /* AMCollationSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMCollationSettingTableController.h; sourceTree = "<group>"; };
+		180601A622897376007D4298 /* AMCollationSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMCollationSettingTableController.m; sourceTree = "<group>"; };
+		180601A9228974CE007D4298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		180950EE227EC45B009FD493 /* AMFileTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFileTableController.h; sourceTree = "<group>"; };
 		180950EF227EC45B009FD493 /* AMFileTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileTableController.m; sourceTree = "<group>"; };
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,10 +280,14 @@
 				1806015022841A57007D4298 /* AMSettingTableController.m */,
 				1806015C2284207D007D4298 /* AMThemeSettingTableController.h */,
 				1806015D2284207D007D4298 /* AMThemeSettingTableController.m */,
+				180601A222897344007D4298 /* AMTemplateSettingTableController.h */,
+				180601A322897344007D4298 /* AMTemplateSettingTableController.m */,
 				180601922286D04D007D4298 /* AMKeyboardSettingTableController.h */,
 				180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */,
 				180601972286EE47007D4298 /* AMKeyboardSettingAddShortcutController.h */,
 				180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */,
+				180601A522897376007D4298 /* AMCollationSettingTableController.h */,
+				180601A622897376007D4298 /* AMCollationSettingTableController.m */,
 				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
 				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
 				18B175A5227F5691007581F4 /* AMRootNavigationController.h */,
@@ -405,13 +415,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180601A122897222007D4298 /* Main.storyboard in Resources */,
 				18B175B2227FE5BB007581F4 /* Localizable.strings in Resources */,
 				1842EA532272EC8C00E08D43 /* LaunchScreen.storyboard in Resources */,
 				18B175AA227FE093007581F4 /* InfoPlist.strings in Resources */,
 				18060187228670B5007D4298 /* main.css in Resources */,
 				18060186228670B5007D4298 /* index.html in Resources */,
 				1842EA502272EC8C00E08D43 /* Assets.xcassets in Resources */,
-				1842EA4B2272EC8C00E08D43 /* Main.storyboard in Resources */,
 				18060188228670B5007D4298 /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,8 +475,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180601A422897344007D4298 /* AMTemplateSettingTableController.m in Sources */,
 				1806017A2284894C007D4298 /* UIView+DYTheme.m in Sources */,
 				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
+				180601A722897376007D4298 /* AMCollationSettingTableController.m in Sources */,
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
 				18B175BF227FEDDD007581F4 /* AMCenterPlaceholderTextField.m in Sources */,
 				1806014D22832928007D4298 /* AMMarkdownFile+CoreDataProperties.m in Sources */,
@@ -504,7 +516,7 @@
 			children = (
 				1842EA4A2272EC8C00E08D43 /* Base */,
 				1806015522841D06007D4298 /* zh-Hans */,
-				1806019E2286F7AF007D4298 /* en */,
+				180601A9228974CE007D4298 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

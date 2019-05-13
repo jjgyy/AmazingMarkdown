@@ -11,6 +11,9 @@
 /* Class = "UILabel"; text = "date"; ObjectID = "B0z-LB-Qa6"; */
 "B0z-LB-Qa6.text" = "date";
 
+/* Class = "UILabel"; text = "Template Setting"; ObjectID = "BXq-a5-Z8n"; */
+"BXq-a5-Z8n.text" = "Template Setting";
+
 /* Class = "UITableViewController"; title = "Setting"; ObjectID = "E0P-Sr-3ma"; */
 "E0P-Sr-3ma.title" = "Setting";
 
@@ -23,11 +26,20 @@
 /* Class = "UILabel"; text = "summary"; ObjectID = "Ky0-xA-CuC"; */
 "Ky0-xA-CuC.text" = "summary";
 
+/* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
+"N5y-OA-zKP.title" = "Collation Setting";
+
+/* Class = "UITableViewController"; title = "Template Setting"; ObjectID = "bpO-dS-ztt"; */
+"bpO-dS-ztt.title" = "Template Setting";
+
 /* Class = "UILabel"; text = "Title"; ObjectID = "dHP-5C-rla"; */
 "dHP-5C-rla.text" = "Title";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "eF7-qc-30M"; */
 "eF7-qc-30M.text" = "Title";
+
+/* Class = "UILabel"; text = "MD"; ObjectID = "hID-nT-lFk"; */
+"hID-nT-lFk.text" = "MD";
 
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
 "hpt-vm-2ZO.title" = "Theme Setting";
@@ -40,6 +52,9 @@
 
 /* Class = "UITableViewSection"; headerTitle = "Shortcut Content"; ObjectID = "sLe-sA-dHT"; */
 "sLe-sA-dHT.headerTitle" = "Shortcut Content";
+
+/* Class = "UILabel"; text = "Collation Setting"; ObjectID = "sSu-aa-K7L"; */
+"sSu-aa-K7L.text" = "Collation Setting";
 
 /* Class = "UITableViewController"; title = "Keyboard Setting"; ObjectID = "uIi-9u-Cvb"; */
 "uIi-9u-Cvb.title" = "Keyboard Setting";

@@ -7,6 +7,9 @@
 /* Class = "UILabel"; text = "date"; ObjectID = "B0z-LB-Qa6"; */
 "B0z-LB-Qa6.text" = "date";
 
+/* Class = "UILabel"; text = "Template Setting"; ObjectID = "BXq-a5-Z8n"; */
+"BXq-a5-Z8n.text" = "模板设置";
+
 /* Class = "UITableViewController"; title = "Setting"; ObjectID = "E0P-Sr-3ma"; */
 "E0P-Sr-3ma.title" = "设置";
 
@@ -19,6 +22,12 @@
 /* Class = "UILabel"; text = "summary"; ObjectID = "Ky0-xA-CuC"; */
 "Ky0-xA-CuC.text" = "summary";
 
+/* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
+"N5y-OA-zKP.title" = "排序规则设置";
+
+/* Class = "UITableViewController"; title = "Template Setting"; ObjectID = "bpO-dS-ztt"; */
+"bpO-dS-ztt.title" = "模板设置";
+
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
 "hpt-vm-2ZO.title" = "主题设置";
 
@@ -30,6 +39,9 @@
 
 /* Class = "UITableViewSection"; headerTitle = "Shortcut Content"; ObjectID = "sLe-sA-dHT"; */
 "sLe-sA-dHT.headerTitle" = "快捷键内容";
+
+/* Class = "UILabel"; text = "Collation Setting"; ObjectID = "sSu-aa-K7L"; */
+"sSu-aa-K7L.text" = "排序规则设置";
 
 /* Class = "UITableViewController"; title = "Keyboard Setting"; ObjectID = "uIi-9u-Cvb"; */
 "uIi-9u-Cvb.title" = "键盘设置";
