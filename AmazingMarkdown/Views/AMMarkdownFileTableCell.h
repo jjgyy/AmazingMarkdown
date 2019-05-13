@@ -14,8 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AMMarkdownFileTableCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *outlineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
 - (void)setTheme:(DYTheme *)theme;
 

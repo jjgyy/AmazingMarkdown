@@ -50,7 +50,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky0-xA-CuC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky0-xA-CuC" userLabel="Summary Label">
                                             <rect key="frame" x="70" y="39.5" width="60" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,25 +72,37 @@
                                                 <constraint firstAttribute="height" constant="70" id="kBo-xK-gd8"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hID-nT-lFk">
+                                            <rect key="frame" x="40" y="45.5" width="23.5" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="ehA-al-6ez"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ky0-xA-CuC" firstAttribute="leading" secondItem="1PP-rH-KI0" secondAttribute="leading" constant="70" id="0mA-IX-aCO"/>
                                         <constraint firstItem="shJ-3H-2sM" firstAttribute="centerY" secondItem="1PP-rH-KI0" secondAttribute="centerY" id="10O-vM-tnv"/>
                                         <constraint firstItem="B0z-LB-Qa6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KSy-gZ-pca" secondAttribute="trailing" constant="30" id="54x-Qx-bjo"/>
+                                        <constraint firstItem="hID-nT-lFk" firstAttribute="top" secondItem="shJ-3H-2sM" secondAttribute="bottom" constant="-28" id="8r4-hu-8J2"/>
                                         <constraint firstItem="KSy-gZ-pca" firstAttribute="top" secondItem="1PP-rH-KI0" secondAttribute="top" constant="15" id="AA3-Kk-0Ts"/>
+                                        <constraint firstItem="Ky0-xA-CuC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hID-nT-lFk" secondAttribute="trailing" constant="5" id="DwN-H1-SOb"/>
                                         <constraint firstAttribute="trailing" secondItem="B0z-LB-Qa6" secondAttribute="trailing" constant="15" id="Edd-8Q-LbH"/>
                                         <constraint firstItem="B0z-LB-Qa6" firstAttribute="centerY" secondItem="1PP-rH-KI0" secondAttribute="centerY" id="G1E-xB-J26"/>
                                         <constraint firstItem="B0z-LB-Qa6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ky0-xA-CuC" secondAttribute="trailing" constant="30" id="ZbK-41-8gg"/>
                                         <constraint firstItem="KSy-gZ-pca" firstAttribute="leading" secondItem="1PP-rH-KI0" secondAttribute="leading" constant="70" id="iSd-5x-cgY"/>
                                         <constraint firstItem="shJ-3H-2sM" firstAttribute="leading" secondItem="1PP-rH-KI0" secondAttribute="leading" constant="10" id="iTq-4O-Ub1"/>
+                                        <constraint firstItem="hID-nT-lFk" firstAttribute="leading" secondItem="shJ-3H-2sM" secondAttribute="trailing" constant="-20" id="kaM-00-QyG"/>
                                         <constraint firstAttribute="bottom" secondItem="Ky0-xA-CuC" secondAttribute="bottom" constant="20" id="lwf-Tv-SRH"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="B0z-LB-Qa6" id="nzA-zu-jTc"/>
-                                    <outlet property="outlineLabel" destination="Ky0-xA-CuC" id="N0S-3i-dy4"/>
+                                    <outlet property="summaryLabel" destination="Ky0-xA-CuC" id="N0S-3i-dy4"/>
                                     <outlet property="titleLabel" destination="KSy-gZ-pca" id="5rH-o0-mLz"/>
+                                    <outlet property="typeLabel" destination="hID-nT-lFk" id="7SA-09-LZL"/>
                                     <segue destination="Npt-qk-VKj" kind="show" identifier="ShowPreviewSegue" id="vdy-NJ-dSy"/>
                                 </connections>
                             </tableViewCell>
@@ -126,7 +138,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-631" y="-233"/>
+            <point key="canvasLocation" x="-631.20000000000005" y="-233.43328335832086"/>
         </scene>
         <!--Setting-->
         <scene sceneID="imV-LQ-0cY">
@@ -369,7 +381,7 @@
         <!--Preview Controller-->
         <scene sceneID="R8g-vN-wpQ">
             <objects>
-                <viewController id="Npt-qk-VKj" customClass="AMPreviewController" customModule="AmazingMarkdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AMPreviewController" id="Npt-qk-VKj" customClass="AMPreviewController" customModule="AmazingMarkdown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QB3-0j-BFJ" customClass="MarkdownView" customModule="AmazingMarkdown" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -389,7 +401,7 @@
         <image name="markdown" width="864" height="864"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vdy-NJ-dSy"/>
+        <segue reference="dfF-MW-Wg9"/>
         <segue reference="l4f-Nt-8zM"/>
     </inferredMetricsTieBreakers>
 </document>

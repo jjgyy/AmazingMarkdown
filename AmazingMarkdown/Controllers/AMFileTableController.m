@@ -43,6 +43,11 @@
     [NSNotificationCenter.defaultCenter addObserverForName:DYThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
     }];
+    
+    // 注册preview
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:self.view];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,10 +69,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AMMarkdownFileTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FileTableCell" forIndexPath:indexPath];
     AMMarkdownFile * file = (AMMarkdownFile *)(self->_fileArray[indexPath.row]);
-    cell.titleLabel.text = [file.title isEqualToString:@""] ? NSLocalizedString(@"untitled", nil) : file.title;
-    cell.titleLabel.textColor = [file.title isEqualToString:@""] ? UIColor.flatBlueColor : UIColor.blackColor;
-    cell.outlineLabel.text = [file.summary isEqualToString:@""] ? NSLocalizedString(@"no summary", nil) : file.summary;
+    cell.titleLabel.text = file.title;
+    cell.summaryLabel.text = [file.summary isEqualToString:@""] ? NSLocalizedString(@"no summary", nil) : file.summary;
     cell.dateLabel.text = [self dateStringFromDate:file.creationDate];
+    cell.typeLabel.text = @"MD";
     [cell setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
     return cell;
 }
@@ -83,7 +88,8 @@
         [NSManagedObjectContext.MR_defaultContext deleteObject:self->_fileArray[indexPath.row]];
         [NSManagedObjectContext.MR_defaultContext MR_saveToPersistentStoreAndWait];
         [self->_fileArray removeObjectAtIndex:indexPath.row];
-        [self.tableView reloadData];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
@@ -104,6 +110,26 @@
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
         [destinationViewController loadFile:newMarkdownFile];
     }
+}
+
+
+#pragma mark -  previewing Delegate
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    CGPoint point = [self.tableView convertPoint:location fromView:self.view];
+    if (CGRectContainsPoint(self.tableView.bounds, point)) {
+        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:point];
+        if (!indexPath) {
+            return nil;
+        }
+        AMPreviewController * previewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AMPreviewController"];
+        [previewController loadFileWithMarkdownFile:self->_fileArray[indexPath.row]];
+        return previewController;
+    }
+    return nil;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 

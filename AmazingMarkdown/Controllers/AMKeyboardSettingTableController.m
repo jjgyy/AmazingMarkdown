@@ -50,6 +50,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
+        if (self.editing) {
+            return self->_shortcutStrings.count;
+        }
         return self->_shortcutStrings.count + 1;
     }
     else if (section == 1) {
@@ -79,6 +82,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BasicTableCell" forIndexPath:indexPath];
         if (indexPath.row == self->_shortcutStrings.count) {
             cell.textLabel.text = NSLocalizedString(@"add shortcut", nil);
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             return cell;
         }
         cell.textLabel.text = self->_shortcutStrings[indexPath.row];
@@ -158,6 +162,7 @@
             }
         }
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -181,6 +186,7 @@ sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
 
 - (void)clickEditButtonHandler {
     self.navigationItem.rightBarButtonItems = @[self->_doneButton];
+    [self setEditing:NO animated:NO];
     [self setEditing:YES animated:YES];
     [self.tableView reloadData];
 }
