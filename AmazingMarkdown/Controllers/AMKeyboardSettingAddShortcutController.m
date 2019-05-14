@@ -38,8 +38,8 @@
 
 - (IBAction)clickDoneButtonHandler:(id)sender {
     if (![self->_shortcutContentTextField.text isEqualToString:@""]) {
-        NSArray<NSString *> * shortcutStrings = [[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey] arrayByAddingObject:self->_shortcutContentTextField.text];
-        [NSUserDefaults.standardUserDefaults setObject:shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+        NSArray<NSString *> * shortcutStrings = [[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey] arrayByAddingObject:self->_shortcutContentTextField.text];
+        [NSUserDefaults.standardUserDefaults setObject:shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

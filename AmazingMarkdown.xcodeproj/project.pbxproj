@@ -41,6 +41,8 @@
 		18B175B2227FE5BB007581F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18B175B4227FE5BB007581F4 /* Localizable.strings */; };
 		18B175BF227FEDDD007581F4 /* AMCenterPlaceholderTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175BE227FEDDD007581F4 /* AMCenterPlaceholderTextField.m */; };
 		18B175C922801551007581F4 /* AMExternalMarkdownFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175C822801551007581F4 /* AMExternalMarkdownFile.m */; };
+		18BFBEFA228AA07B007D3A53 /* AMUserDefaultsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFBEF9228AA07B007D3A53 /* AMUserDefaultsKeys.m */; };
+		18BFBEFD228AB543007D3A53 /* AMNotificationNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFBEFC228AB543007D3A53 /* AMNotificationNames.m */; };
 		18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */; };
 		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
 		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
@@ -115,6 +117,10 @@
 		18B175BE227FEDDD007581F4 /* AMCenterPlaceholderTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMCenterPlaceholderTextField.m; sourceTree = "<group>"; };
 		18B175C722801551007581F4 /* AMExternalMarkdownFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMExternalMarkdownFile.h; sourceTree = "<group>"; };
 		18B175C822801551007581F4 /* AMExternalMarkdownFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMExternalMarkdownFile.m; sourceTree = "<group>"; };
+		18BFBEF8228AA053007D3A53 /* AMUserDefaultsKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMUserDefaultsKeys.h; sourceTree = "<group>"; };
+		18BFBEF9228AA07B007D3A53 /* AMUserDefaultsKeys.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMUserDefaultsKeys.m; sourceTree = "<group>"; };
+		18BFBEFB228AB51C007D3A53 /* AMNotificationNames.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMNotificationNames.h; sourceTree = "<group>"; };
+		18BFBEFC228AB543007D3A53 /* AMNotificationNames.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMNotificationNames.m; sourceTree = "<group>"; };
 		18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardToolbarFactory.m; sourceTree = "<group>"; };
 		18F4260B22744C67002EBDDD /* AMKeyboardToolbarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMKeyboardToolbarFactory.h; sourceTree = "<group>"; };
 		18F4261B22747281002EBDDD /* DYKeyboardToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYKeyboardToolbar.h; sourceTree = "<group>"; };
@@ -243,6 +249,10 @@
 		1842EA422272EC8C00E08D43 /* AmazingMarkdown */ = {
 			isa = PBXGroup;
 			children = (
+				18BFBEF8228AA053007D3A53 /* AMUserDefaultsKeys.h */,
+				18BFBEF9228AA07B007D3A53 /* AMUserDefaultsKeys.m */,
+				18BFBEFB228AB51C007D3A53 /* AMNotificationNames.h */,
+				18BFBEFC228AB543007D3A53 /* AMNotificationNames.m */,
 				18B175C022801435007581F4 /* Models */,
 				18B175B6227FE9FB007581F4 /* Views */,
 				180950EC227EC2FE009FD493 /* SQLModels */,
@@ -497,8 +507,10 @@
 				180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */,
 				18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */,
 				180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */,
+				18BFBEFA228AA07B007D3A53 /* AMUserDefaultsKeys.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
 				180601742284830C007D4298 /* DYTheme+Class.m in Sources */,
+				18BFBEFD228AB543007D3A53 /* AMNotificationNames.m in Sources */,
 				1806014C22832928007D4298 /* AMMarkdownFile+CoreDataClass.m in Sources */,
 				18060177228488F3007D4298 /* UITableViewCell+DYTheme.m in Sources */,
 				1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */,

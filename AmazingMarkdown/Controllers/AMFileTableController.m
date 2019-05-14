@@ -14,6 +14,8 @@
 #import "AMMarkdownFileTableCell.h"
 #import "Chameleon.h"
 #import "DYTheme.h"
+#import "AMUserDefaultsKeys.h"
+#import "AMCollationSettingTableController.h"
 
 @interface AMFileTableController ()
 
@@ -51,7 +53,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self->_fileArray = [[AMMarkdownFile MR_findAllSortedBy:@"creationDate" ascending:NO] mutableCopy];
+    NSString * collationKey = AMCollationSettingTableController.collationKeys[[NSUserDefaults.standardUserDefaults integerForKey:AMCollationSettingCollationKeyIndexUserDefaultsKey]];
+    BOOL isAscendingOrder = [NSUserDefaults.standardUserDefaults boolForKey:AMCollationSettingIsAscendingOrderUserDefaultsKey];
+    self->_fileArray = [[AMMarkdownFile MR_findAllSortedBy:collationKey ascending:isAscendingOrder] mutableCopy];
     [self.tableView reloadData];
     [super viewWillAppear:animated];
 }
@@ -131,7 +135,6 @@
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
     [self showViewController:viewControllerToCommit sender:self];
 }
-
 
 - (NSString *)dateStringFromDate:(NSDate *)date {
     NSString * today = [self->_yearMonthDayFormatter stringFromDate:[NSDate new]];

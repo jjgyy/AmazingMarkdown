@@ -14,6 +14,7 @@
 #import "MBProgressHUD.h"
 #import "DYMarkdownTextView.h"
 #import "DYTheme.h"
+#import "AMUserDefaultsKeys.h"
 
 static const CGFloat kMainTextViewInitialFontSize = 17.0f;
 static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
@@ -50,7 +51,7 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     [self->_mainTextView setFont:[UIFont systemFontOfSize:kMainTextViewInitialFontSize weight:kMainTextViewInitialFontWeight]];
     
     // 为_mainTextView添加键盘工具栏
-    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView withShortcutStrings:[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey]];
+    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView withShortcutStrings:[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey]];
     
     // 配置_doneButton
     self->_doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(clickDoneButtonHandler)];

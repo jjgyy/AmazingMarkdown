@@ -33,6 +33,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (object == self->_observed && [keyPath isEqualToString:self->_keyPath]) {
+        [self setAlpha:1.0f];
         float progress = ((NSNumber *)[self->_observed valueForKeyPath:keyPath]).floatValue;
         [self setProgress:progress animated:YES];
         if (progress >= 1.0f) {

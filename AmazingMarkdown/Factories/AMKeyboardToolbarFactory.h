@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const AMKeyboardToolbarShortcutStringsUserDefaultsKey;
+extern NSString * const AMKeyboardSettingShortcutStringsUserDefaultsKey;
 
 @interface AMKeyboardToolbarFactory : NSObject
 

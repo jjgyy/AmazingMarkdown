@@ -8,14 +8,13 @@
 
 #import "AMKeyboardToolbarFactory.h"
 #import "DYKeyboardToolbar.h"
-
-NSString * const AMKeyboardToolbarShortcutStringsUserDefaultsKey = @"AMKeyboardToolbarHelpingStringsUserDefaultsKey";
+#import "AMUserDefaultsKeys.h"
 
 @implementation AMKeyboardToolbarFactory
 
 + (NSArray<NSString *> *)defaultMarkdownShortcutStrings {
     NSArray<NSString *> * shortcutStrings = @[@"#", @"*", @"-", @"_", @"~", @"`", @">", @"|", @"[", @"]", @"(", @")"];
-    [NSUserDefaults.standardUserDefaults setObject:shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+    [NSUserDefaults.standardUserDefaults setObject:shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
     return shortcutStrings;
 }
 

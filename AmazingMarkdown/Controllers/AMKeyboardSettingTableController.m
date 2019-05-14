@@ -8,6 +8,7 @@
 
 #import "AMKeyboardSettingTableController.h"
 #import "AMKeyboardToolbarFactory.h"
+#import "AMUserDefaultsKeys.h"
 
 @interface AMKeyboardSettingTableController ()
 
@@ -23,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self->_originShortcutStrings = (NSArray<NSString *> *)[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+    self->_originShortcutStrings = (NSArray<NSString *> *)[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
     self->_shortcutStrings = [self->_originShortcutStrings mutableCopy];
     if (!self->_shortcutStrings) {
         self->_shortcutStrings = [AMKeyboardToolbarFactory.defaultMarkdownShortcutStrings mutableCopy];
@@ -37,7 +38,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self->_shortcutStrings = [(NSArray<NSString *> *)[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey] mutableCopy];
+    self->_shortcutStrings = [(NSArray<NSString *> *)[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey] mutableCopy];
     [self.tableView reloadData];
 }
 
@@ -125,7 +126,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self->_shortcutStrings removeObjectAtIndex:indexPath.row];
-        [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+        [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
         self->_isModified = YES;
         [self.tableView reloadData];
     }
@@ -142,13 +143,13 @@
         if (self->_isModified) {
             if (indexPath.row == 0) {
                 self->_shortcutStrings = [self->_originShortcutStrings mutableCopy];
-                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
                 self->_isModified = NO;
                 [self.tableView reloadData];
             }
             else if (indexPath.row == 1) {
                 self->_shortcutStrings = [AMKeyboardToolbarFactory.defaultMarkdownShortcutStrings mutableCopy];
-                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
                 self->_isModified = YES;
                 [self.tableView reloadData];
             }
@@ -156,7 +157,7 @@
         else {
             if (indexPath.row == 0) {
                 self->_shortcutStrings = [AMKeyboardToolbarFactory.defaultMarkdownShortcutStrings mutableCopy];
-                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+                [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
                 self->_isModified = YES;
                 [self.tableView reloadData];
             }
@@ -179,7 +180,7 @@ sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     NSString * shortcutString = self->_shortcutStrings[fromRow];
     [self->_shortcutStrings removeObjectAtIndex:fromRow];
     [self->_shortcutStrings insertObject:shortcutString atIndex:toRow];
-    [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardToolbarShortcutStringsUserDefaultsKey];
+    [NSUserDefaults.standardUserDefaults setObject:(NSArray *)self->_shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
     self->_isModified = YES;
 }
 

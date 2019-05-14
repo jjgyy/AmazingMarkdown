@@ -7,87 +7,107 @@
 //
 
 #import "AMCollationSettingTableController.h"
+#import "AMUserDefaultsKeys.h"
+#import "AMNotificationNames.h"
 
 @interface AMCollationSettingTableController ()
 
 @end
 
-@implementation AMCollationSettingTableController
+@implementation AMCollationSettingTableController {
+    NSInteger _collationKeyIndex;
+    BOOL _isAscendingOrder;
+}
+
++ (NSArray<NSString *> *)collationKeys {
+    return @[@"creationDate", @"modifiedDate", @"title"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self->_collationKeyIndex = [NSUserDefaults.standardUserDefaults integerForKey:AMCollationSettingCollationKeyIndexUserDefaultsKey];
+    self->_isAscendingOrder = [NSUserDefaults.standardUserDefaults boolForKey:AMCollationSettingIsAscendingOrderUserDefaultsKey];
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+    if (section == 0) {
+        return 3;
+    }
+    else if (section == 1) {
+        return 2;
+    }
     return 0;
 }
 
-/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return NSLocalizedString(@"according to", nil);
+    }
+    else if (section == 1) {
+        return NSLocalizedString(@"with order", nil);
+    }
+    return @"";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:@"BasicTableCell"];
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = NSLocalizedString(@"creation time", nil);
+        }
+        else if (indexPath.row == 1) {
+            cell.textLabel.text = NSLocalizedString(@"modification time", nil);
+        }
+        else if (indexPath.row == 2) {
+            cell.textLabel.text = NSLocalizedString(@"file name", nil);
+        }
+        
+        if (self->_collationKeyIndex == indexPath.row) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
+    else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            cell.textLabel.text = NSLocalizedString(@"descending order", nil);
+        }
+        else if (indexPath.row == 1) {
+            cell.textLabel.text = NSLocalizedString(@"ascending order", nil);
+        }
+        
+        if ((NSInteger)self->_isAscendingOrder == indexPath.row) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (self->_collationKeyIndex == indexPath.row) {
+            return;
+        }
+        [NSUserDefaults.standardUserDefaults setInteger:indexPath.row forKey:AMCollationSettingCollationKeyIndexUserDefaultsKey];
+        [NSNotificationCenter.defaultCenter postNotificationName:AMCollationSettingDidChangeNotificationName object:nil];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self->_collationKeyIndex inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+        [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        self->_collationKeyIndex = indexPath.row;
+    }
+    else if (indexPath.section == 1) {
+        if ((NSInteger)self->_isAscendingOrder == indexPath.row) {
+            return;
+        }
+        [NSUserDefaults.standardUserDefaults setBool:(BOOL)indexPath.row forKey:AMCollationSettingIsAscendingOrderUserDefaultsKey];
+        [NSNotificationCenter.defaultCenter postNotificationName:AMCollationSettingDidChangeNotificationName object:nil];
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(NSInteger)self->_isAscendingOrder inSection:1]].accessoryType = UITableViewCellAccessoryNone;
+        [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        self->_isAscendingOrder = (BOOL)indexPath.row;
+    }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

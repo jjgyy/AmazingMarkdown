@@ -9,6 +9,7 @@
 "title placeholder" = "点击来命名";
 "no summary" = "(无摘要)";
 "preview" = "预览";
+"edit" = "编辑";
 "setting" = "设置";
 "theme setting" = "主题设置";
 "bright theme" = "亮色主题";
@@ -19,3 +20,11 @@
 "restore defaults" = "恢复为默认";
 "add shortcut" = "添加快捷键...";
 "enter shortcut content" = "输入快捷键内容...";
+
+"according to" = "排序依据";
+"with order" = "顺序";
+"creation time" = "创建时间";
+"modification time" = "修改时间";
+"file name" = "文件名";
+"descending order" = "降序";
+"ascending order" = "升序";

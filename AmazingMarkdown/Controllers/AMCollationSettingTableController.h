@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AMCollationSettingTableController : UITableViewController
 
+@property (class, nonatomic, readonly) NSArray<NSString *> * collationKeys;
+
 @end
 
 NS_ASSUME_NONNULL_END
