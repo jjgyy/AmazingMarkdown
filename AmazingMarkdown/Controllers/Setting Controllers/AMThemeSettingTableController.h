@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMThemeTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMThemeSettingTableController : UITableViewController
+extern NSString * const AMThemeIndexUserDefaultsKey;
+extern NSString * const AMThemeDidChangeNotification;
+
+@interface AMThemeSettingTableController : AMThemeTableViewController
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import "AMSettingTableController.h"
-#import "DYTheme.h"
+#import "AMThemeSettingTableController.h"
 
 @interface AMSettingTableController ()
 

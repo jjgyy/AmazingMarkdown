@@ -1,23 +1,22 @@
 //
-//  UITableViewCell+DYTheme.m
+//  AMThemeTableViewCell.m
 //  AmazingMarkdown
 //
-//  Created by Apple on 2019/5/10.
+//  Created by Apple on 2019/5/20.
 //  Copyright © 2019 Young. All rights reserved.
 //
 
-#import "UITableViewCell+DYTheme.h"
-#import "DYTheme.h"
+#import "AMThemeTableViewCell.h"
+#import "AMThemeSettingTableController.h"
 
-@implementation UITableViewCell (DYTheme)
+@implementation AMThemeTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
 }
 
-- (void)setTheme:(DYTheme *)theme {
-    [super setTheme:theme];
+- (void)setTheme:(AMTheme *)theme {
     self.backgroundColor = theme.cellColor;
     self.textLabel.textColor = theme.cellTitleColor;
     self.selectedBackgroundView = [[UIView alloc]initWithFrame:self.frame];

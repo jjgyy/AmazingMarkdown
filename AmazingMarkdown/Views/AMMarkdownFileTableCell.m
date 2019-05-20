@@ -26,7 +26,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setTheme:(DYTheme *)theme {
+- (void)setTheme:(AMTheme *)theme {
     self.backgroundColor = theme.cellColor;
     if ([self.titleLabel.text isEqualToString:@""]) {
         self.titleLabel.textColor = theme.cellTitleSpecialColor;

@@ -8,7 +8,6 @@
 
 #import "AMKeyboardToolbarFactory.h"
 #import "DYKeyboardToolbar.h"
-#import "AMUserDefaultsKeys.h"
 
 @implementation AMKeyboardToolbarFactory
 

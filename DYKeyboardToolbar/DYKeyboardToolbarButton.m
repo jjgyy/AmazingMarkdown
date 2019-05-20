@@ -10,8 +10,8 @@
 
 static const CGFloat kButtonCornerRadius = 5.0f;
 static const CGFloat kButtonContentHorizontalInset = 22.0f;
-static const CGFloat kButtonContentVerticalInset = 8.0f;
-static const CGFloat kButtonTitleFontSize = 22.0f;
+static const CGFloat kButtonContentVerticalInset = 10.0f;
+static const CGFloat kButtonTitleFontSize = 20.0f;
 
 @interface DYKeyboardToolbarButton ()
 

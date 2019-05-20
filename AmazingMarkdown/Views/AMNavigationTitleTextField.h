@@ -1,5 +1,5 @@
 //
-//  AMCenterPlaceholderTextField.h
+//  AMNavigationTitleTextField.h
 //  AmazingMarkdown
 //
 //  Created by Apple on 2019/5/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMCenterPlaceholderTextField : UITextField
+@interface AMNavigationTitleTextField : UITextField
 
 - (instancetype)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder fontSize:(CGFloat)fontSize;
 

@@ -1,18 +1,17 @@
 //
-//  UITableViewController+DYTheme.h
+//  AMThemeTableViewCell.h
 //  AmazingMarkdown
 //
-//  Created by Apple on 2019/5/9.
+//  Created by Apple on 2019/5/20.
 //  Copyright © 2019 Young. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-@class DYTheme;
+#import "AMTheme.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITableViewController (DYTheme)
+@interface AMThemeTableViewCell : UITableViewCell
 
 @end
 

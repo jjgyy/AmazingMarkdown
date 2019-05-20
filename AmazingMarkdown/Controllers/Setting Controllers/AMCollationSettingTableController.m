@@ -7,8 +7,12 @@
 //
 
 #import "AMCollationSettingTableController.h"
-#import "AMUserDefaultsKeys.h"
-#import "AMNotificationNames.h"
+
+NSString * const AMCollationSettingCollationKeyIndexUserDefaultsKey = @"AMCollationSettingCollationKeyUserDefaultsKey";
+NSString * const AMCollationSettingIsAscendingOrderUserDefaultsKey = @"AMCollationSettingIsAscendingOrderUserDefaultsKey";
+
+NSString * const AMCollationSettingDidChangeNotificationName = @"AMCollationSettingDidChangeNotificationName";
+
 
 @interface AMCollationSettingTableController ()
 

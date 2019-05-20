@@ -27,7 +27,7 @@ class AMPreviewController: UIViewController {
         self.view.addSubview(progressView)
         
         // 设置背景色
-        self.view.backgroundColor = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].backgroundColor
+        self.view.backgroundColor = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].backgroundColor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,6 +44,19 @@ class AMPreviewController: UIViewController {
         let newMarkdownFile = AMMarkdownFile.mr_createEntity()
         newMarkdownFile?.title = self.title
         newMarkdownFile?.content = self.markdownString
+        if let markdownString = self.markdownString {
+            var tempSummary: String
+            if markdownString.count >= 40 {
+                let startIndex = markdownString.startIndex;
+                let endIndex = markdownString.index(markdownString.startIndex, offsetBy: 39)
+                tempSummary = String(markdownString[startIndex ... endIndex])
+            }
+            else {
+                tempSummary = markdownString
+            }
+            tempSummary = tempSummary.replacingOccurrences(of: "\n", with: " ")
+            newMarkdownFile?.summary = tempSummary
+        }
         newMarkdownFile?.creationDate = Date()
         newMarkdownFile?.modifiedDate = newMarkdownFile?.creationDate;
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
@@ -59,14 +72,14 @@ class AMPreviewController: UIViewController {
     @objc
     func load(markdown: String?) {
         self.title = NSLocalizedString("preview", comment: "")
-        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + (markdown ?? "")
+        self.markdownString = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].cssStyleString + (markdown ?? "")
     }
     
     @objc
     func loadFile(markdownFile: AMMarkdownFile?) {
         self.markdownFile = markdownFile
         self.title = markdownFile?.title
-        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (markdownFile?.content ?? "")
+        self.markdownString = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (markdownFile?.content ?? "")
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(clickEditButtonHandler))
         self.navigationItem.rightBarButtonItems = [editButton]
     }
@@ -75,7 +88,7 @@ class AMPreviewController: UIViewController {
     func loadExternalFile(externalFile: AMExternalMarkdownFile?) {
         self.title = externalFile?.fileName
         guard let data = externalFile?.fileData else { return }
-        self.markdownString = DYTheme.themes[UserDefaults.standard.integer(forKey: DYThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (String(data: data, encoding: .utf8) ?? "")
+        self.markdownString = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (String(data: data, encoding: .utf8) ?? "")
         let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(clickSaveButtonHandler))
         self.navigationItem.rightBarButtonItems = [saveButton]
     }

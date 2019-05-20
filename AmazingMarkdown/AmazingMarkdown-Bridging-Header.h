@@ -6,5 +6,6 @@
 #import "AMMarkdownFile+CoreDataClass.h"
 #import "AMExternalMarkdownFile.h"
 #import "AMEdittingContentController.h"
-#import "DYTheme.h"
+#import "AMTheme.h"
 #import "DYProgressView.h"
+#import "AMThemeSettingTableController.h"

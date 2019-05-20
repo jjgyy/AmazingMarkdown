@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMThemeTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMSettingTableController : UITableViewController
+@interface AMSettingTableController : AMThemeTableViewController
 
 @end
 

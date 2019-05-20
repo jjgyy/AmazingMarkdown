@@ -11,7 +11,8 @@
 #import "AMExternalMarkdownFile.h"
 #import "Chameleon.h"
 #import "AMEdittingContentController.h"
-#import "DYTheme.h"
+#import "AMTheme.h"
+#import "AMThemeSettingTableController.h"
 
 @interface AMRootNavigationController ()
 
@@ -21,15 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
     
     [NSNotificationCenter.defaultCenter addObserverForName:RedirectToEdittingContentControllerNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         [self popToRootViewControllerAnimated:NO];
         [self performSegueWithIdentifier:@"EditFileSegue" sender:note.userInfo[@"markdownFile"]];
     }];
     
-    [NSNotificationCenter.defaultCenter addObserverForName:DYThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
-        [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    [NSNotificationCenter.defaultCenter addObserverForName:AMThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
         [self popToRootViewControllerAnimated:YES];
     }];
 }
@@ -45,7 +46,7 @@
     }
 }
 
-- (void)setTheme:(DYTheme *)theme {
+- (void)setTheme:(AMTheme *)theme {
     self.navigationBar.tintColor = theme.navigationTintColor;
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:theme.navigationTintColor}];
     self.navigationBar.barTintColor = theme.navigationBarColor;

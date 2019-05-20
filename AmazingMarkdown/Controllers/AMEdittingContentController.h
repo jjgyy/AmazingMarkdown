@@ -15,6 +15,8 @@ extern NSString * const RedirectToEdittingContentControllerNotification;
 
 @interface AMEdittingContentController : UIViewController
 
+@property (nonatomic, assign) BOOL isFirstResponderAfterLoading;
+
 - (void)loadFile:(AMMarkdownFile *)file;
 
 @end

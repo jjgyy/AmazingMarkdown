@@ -7,7 +7,9 @@
 //
 
 #import "AMThemeSettingTableController.h"
-#import "DYTheme.h"
+
+NSString * const AMThemeIndexUserDefaultsKey = @"AMThemeIndexUserDefaultsKey";
+NSString * const AMThemeDidChangeNotification = @"AMThemeDidChangeNotification";
 
 @interface AMThemeSettingTableController ()
 
@@ -19,10 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self->_checkmarkedRow = [NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey];
-    if (self->_checkmarkedRow < 0 || self->_checkmarkedRow >= DYTheme.themes.count) {
+    self->_checkmarkedRow = [NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey];
+    if (self->_checkmarkedRow < 0 || self->_checkmarkedRow >= AMTheme.themes.count) {
         self->_checkmarkedRow = 0;
-        [NSUserDefaults.standardUserDefaults setInteger:0 forKey:DYThemeIndexUserDefaultsKey];
+        [NSUserDefaults.standardUserDefaults setInteger:0 forKey:AMThemeIndexUserDefaultsKey];
     }
 }
 
@@ -32,7 +34,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return DYTheme.themes.count;
+        return AMTheme.themes.count;
     }
     return 0;
 }
@@ -46,7 +48,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"BasicTableCell"];
-    cell.textLabel.text = DYTheme.themes[indexPath.row].themeName;
+    cell.textLabel.text = AMTheme.themes[indexPath.row].themeName;
     if (indexPath.row == self->_checkmarkedRow) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -59,11 +61,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row != self->_checkmarkedRow) {
-        [NSUserDefaults.standardUserDefaults setInteger:indexPath.row forKey:DYThemeIndexUserDefaultsKey];
+        [NSUserDefaults.standardUserDefaults setInteger:indexPath.row forKey:AMThemeIndexUserDefaultsKey];
         [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self->_checkmarkedRow inSection:0]].accessoryType = UITableViewCellAccessoryNone;
         [self.tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
         self->_checkmarkedRow = indexPath.row;
-        [NSNotificationCenter.defaultCenter postNotificationName:DYThemeDidChangeNotification object:nil];
+        [NSNotificationCenter.defaultCenter postNotificationName:AMThemeDidChangeNotification object:nil];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

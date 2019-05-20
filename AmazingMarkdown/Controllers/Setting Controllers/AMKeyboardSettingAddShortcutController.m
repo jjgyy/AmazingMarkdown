@@ -8,32 +8,25 @@
 
 #import "AMKeyboardSettingAddShortcutController.h"
 #import "AMKeyboardToolbarFactory.h"
-#import "DYTheme.h"
+#import "AMThemeSettingTableController.h"
 
 @interface AMKeyboardSettingAddShortcutController ()
 
-@property (weak, nonatomic) IBOutlet UIView *shortcutContentTableCellView;
+@property (weak, nonatomic) IBOutlet UITextField *shortcutContentTextField;
 
 - (IBAction)clickDoneButtonHandler:(id)sender;
 
 @end
 
-@implementation AMKeyboardSettingAddShortcutController {
-    UITextField * _shortcutContentTextField;
-}
-
+@implementation AMKeyboardSettingAddShortcutController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGRect rect = self->_shortcutContentTableCellView.bounds;
-    rect.origin.x = 20.0f;
-    self->_shortcutContentTextField = [[UITextField alloc] initWithFrame:rect];
-    NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"enter shortcut content", nil) attributes:@{NSForegroundColorAttributeName:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]].placeholderColor}];
+    NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"enter shortcut content", nil) attributes:@{NSForegroundColorAttributeName:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]].placeholderColor}];
     self->_shortcutContentTextField.attributedPlaceholder = attributedPlaceholder;
     self->_shortcutContentTextField.font = [UIFont systemFontOfSize:16.0f];
-    [self.shortcutContentTableCellView addSubview:self->_shortcutContentTextField];
     self->_shortcutContentTextField.text = @"";
-    self->_shortcutContentTextField.textColor = DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]].textColor;
+    self->_shortcutContentTextField.textColor = AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]].textColor;
 }
 
 - (IBAction)clickDoneButtonHandler:(id)sender {

@@ -1,29 +1,29 @@
 //
-//  DYTheme+Themes.m
+//  AMTheme+Themes.m
 //  AmazingMarkdown
 //
 //  Created by Apple on 2019/5/9.
 //  Copyright © 2019 Young. All rights reserved.
 //
 
-#import "DYTheme+Themes.h"
+#import "AMTheme+Themes.h"
 
-@implementation DYTheme (Themes)
+@implementation AMTheme (Themes)
 
-static NSArray<DYTheme *> * _themes;
+static NSArray<AMTheme *> * _themes;
 + (NSArray *)themes {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _themes = @[DYTheme.brightTheme, DYTheme.darkTheme];
+        _themes = @[AMTheme.brightTheme, AMTheme.darkTheme];
     });
     return _themes;
 }
 
-static DYTheme * _brightTheme;
-+ (DYTheme *)brightTheme {
+static AMTheme * _brightTheme;
++ (AMTheme *)brightTheme {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _brightTheme = [DYTheme new];
+        _brightTheme = [AMTheme new];
         _brightTheme.themeName = NSLocalizedString(@"bright theme", nil);
         
         _brightTheme.navigationBarColor = HexColor(@"#f8f8f8");
@@ -47,11 +47,11 @@ static DYTheme * _brightTheme;
     return _brightTheme;
 }
 
-static DYTheme * _darkTheme;
-+ (DYTheme *)darkTheme {
+static AMTheme * _darkTheme;
++ (AMTheme *)darkTheme {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _darkTheme = [DYTheme new];
+        _darkTheme = [AMTheme new];
         _darkTheme.themeName = NSLocalizedString(@"dark theme", nil);
         
         _darkTheme.navigationBarColor = HexColor(@"#303030");

@@ -6,16 +6,17 @@
 //  Copyright © 2019 Young. All rights reserved.
 //
 
-#import "AMCenterPlaceholderTextField.h"
-#import "DYTheme.h"
+#import "AMNavigationTitleTextField.h"
+#import "AMTheme.h"
+#import "AMThemeSettingTableController.h"
 
-@implementation AMCenterPlaceholderTextField
+@implementation AMNavigationTitleTextField
 
 - (instancetype)initWithFrame:(CGRect)frame placeholder:(NSString *)placeholder fontSize:(CGFloat)fontSize {
     if (self = [super initWithFrame:frame]) {
         NSMutableParagraphStyle * style = [[NSMutableParagraphStyle alloc] init];
         style.alignment = NSTextAlignmentCenter;
-        NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSParagraphStyleAttributeName:style, NSForegroundColorAttributeName:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]].placeholderColor}];
+        NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSParagraphStyleAttributeName:style, NSForegroundColorAttributeName:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]].placeholderColor}];
         self.attributedPlaceholder = attributedPlaceholder;
         self.textAlignment = NSTextAlignmentCenter;
         self.font = [UIFont boldSystemFontOfSize:fontSize];

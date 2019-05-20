@@ -8,7 +8,8 @@
 
 #import "AMKeyboardSettingTableController.h"
 #import "AMKeyboardToolbarFactory.h"
-#import "AMUserDefaultsKeys.h"
+
+NSString * const AMKeyboardSettingShortcutStringsUserDefaultsKey = @"AMKeyboardToolbarShortcutStringsUserDefaultsKey";
 
 @interface AMKeyboardSettingTableController ()
 

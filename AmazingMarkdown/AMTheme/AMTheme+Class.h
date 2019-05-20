@@ -1,5 +1,5 @@
 //
-//  DYTheme+Class.h
+//  AMTheme+Class.h
 //  AmazingMarkdown
 //
 //  Created by Apple on 2019/5/9.
@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const DYThemeIndexUserDefaultsKey;
-extern NSString * const DYThemeDidChangeNotification;
-
-@interface DYTheme : NSObject
+@interface AMTheme : NSObject
 
 @property (nonatomic, copy) NSString * themeName;
 

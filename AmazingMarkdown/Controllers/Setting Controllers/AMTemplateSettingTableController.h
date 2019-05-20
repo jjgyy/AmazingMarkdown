@@ -1,5 +1,5 @@
 //
-//  AMCollationSettingTableController.h
+//  AMTemplateSettingTableController.h
 //  AmazingMarkdown
 //
 //  Created by Apple on 2019/5/13.
@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMThemeTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMCollationSettingTableController : UITableViewController
-
-@property (class, nonatomic, readonly) NSArray<NSString *> * collationKeys;
+@interface AMTemplateSettingTableController : AMThemeTableViewController
 
 @end
 

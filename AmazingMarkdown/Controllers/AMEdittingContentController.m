@@ -10,11 +10,12 @@
 #import "AmazingMarkdown-Swift.h"
 #import "AMKeyboardToolbarFactory.h"
 #import <MagicalRecord/MagicalRecord.h>
-#import "AMCenterPlaceholderTextField.h"
+#import "AMNavigationTitleTextField.h"
 #import "MBProgressHUD.h"
 #import "DYMarkdownTextView.h"
-#import "DYTheme.h"
-#import "AMUserDefaultsKeys.h"
+#import "AMTheme.h"
+#import "AMThemeSettingTableController.h"
+#import "AMKeyboardSettingTableController.h"
 
 static const CGFloat kMainTextViewInitialFontSize = 17.0f;
 static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
@@ -27,7 +28,7 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
 - (IBAction)rightEdgePanGesHandler:(UIScreenEdgePanGestureRecognizer *)sender;
 
 @property (nonatomic, strong) UIBarButtonItem * doneButton;
-@property (nonatomic, strong) AMCenterPlaceholderTextField * titleTextField;
+@property (nonatomic, strong) AMNavigationTitleTextField * titleTextField;
 @property (nonatomic, strong) AMMarkdownFile * currentFile;
 
 @end
@@ -51,7 +52,12 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     [self->_mainTextView setFont:[UIFont systemFontOfSize:kMainTextViewInitialFontSize weight:kMainTextViewInitialFontWeight]];
     
     // 为_mainTextView添加键盘工具栏
-    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView withShortcutStrings:[NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey]];
+    NSArray<NSString *> * shortcutStrings = [NSUserDefaults.standardUserDefaults objectForKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
+    if (!shortcutStrings) {
+        shortcutStrings = [AMKeyboardToolbarFactory.defaultMarkdownShortcutStrings mutableCopy];
+        [NSUserDefaults.standardUserDefaults setObject:shortcutStrings forKey:AMKeyboardSettingShortcutStringsUserDefaultsKey];
+    }
+    [AMKeyboardToolbarFactory addMarkdownInputToolbarFor:(UITextView *)self->_mainTextView withShortcutStrings:shortcutStrings];
     
     // 配置_doneButton
     self->_doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(clickDoneButtonHandler)];
@@ -75,7 +81,7 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     });
     
     // 配置_titleTextField, 依赖_currentFile
-    self->_titleTextField = [[AMCenterPlaceholderTextField alloc] initWithFrame:CGRectMake(0, 0, 200, 35) placeholder:NSLocalizedString(@"title placeholder", nil) fontSize:UIFont.labelFontSize];
+    self->_titleTextField = [[AMNavigationTitleTextField alloc] initWithFrame:CGRectMake(0, 0, 200, 35) placeholder:NSLocalizedString(@"title placeholder", nil) fontSize:UIFont.labelFontSize];
     if (![self->_currentFile.title isEqualToString:@""]) {
         self->_titleTextField.text = self->_currentFile.title;
     }
@@ -84,7 +90,12 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     // 配置_isReadyToQuit
     self->_isReadyToQuit = YES;
     
-    [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    // 页面出现后_mainTextView获得焦点
+    if (self->_isFirstResponderAfterLoading) {
+        [self->_mainTextView becomeFirstResponder];
+    }
+    
+    [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
 }
 
 
@@ -184,8 +195,7 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     }
 }
 
-- (void)setTheme:(DYTheme *)theme {
-    [super setTheme:theme];
+- (void)setTheme:(AMTheme *)theme {
     self->_titleTextField.textColor = theme.navigationTintColor;
     self->_mainTextView.backgroundColor = theme.textBackgroundColor;
     self->_mainTextView.textColor = theme.textColor;

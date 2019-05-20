@@ -13,8 +13,7 @@
 #import "AMMarkdownFile+CoreDataClass.h"
 #import "AMMarkdownFileTableCell.h"
 #import "Chameleon.h"
-#import "DYTheme.h"
-#import "AMUserDefaultsKeys.h"
+#import "AMThemeSettingTableController.h"
 #import "AMCollationSettingTableController.h"
 
 @interface AMFileTableController ()
@@ -42,8 +41,8 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
     // 观察Theme设置改变
-    [NSNotificationCenter.defaultCenter addObserverForName:DYThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
-        [self setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    [NSNotificationCenter.defaultCenter addObserverForName:AMThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
     }];
     
     // 注册preview
@@ -77,7 +76,7 @@
     cell.summaryLabel.text = [file.summary isEqualToString:@""] ? NSLocalizedString(@"no summary", nil) : file.summary;
     cell.dateLabel.text = [self dateStringFromDate:file.creationDate];
     cell.typeLabel.text = @"MD";
-    [cell setTheme:DYTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:DYThemeIndexUserDefaultsKey]]];
+    [cell setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
     return cell;
 }
 
@@ -113,6 +112,7 @@
         newMarkdownFile.modifiedDate = newMarkdownFile.creationDate;
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
         [destinationViewController loadFile:newMarkdownFile];
+        destinationViewController.isFirstResponderAfterLoading = YES;
     }
 }
 
