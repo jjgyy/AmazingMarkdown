@@ -25,6 +25,9 @@
 /* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
 "N5y-OA-zKP.title" = "排序规则设置";
 
+/* Class = "UILabel"; text = "Folder"; ObjectID = "YWJ-z3-r3i"; */
+"YWJ-z3-r3i.text" = "文件夹";
+
 /* Class = "UITableViewController"; title = "Template Setting"; ObjectID = "bpO-dS-ztt"; */
 "bpO-dS-ztt.title" = "模板设置";
 

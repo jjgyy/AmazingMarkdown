@@ -5,6 +5,7 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import "AMMarkdownFile+CoreDataClass.h"
 #import "AMExternalMarkdownFile.h"
+#import "AMRootNavigationController.h"
 #import "AMEdittingContentController.h"
 #import "AMTheme.h"
 #import "DYProgressView.h"

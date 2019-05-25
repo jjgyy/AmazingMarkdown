@@ -18,11 +18,14 @@
 
 @interface AMFileTableController ()
 
-@property(nonatomic, strong) NSMutableArray<AMMarkdownFile *> * fileArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem * addButton;
+
+- (IBAction)clickAddButton:(id)sender;
 
 @end
 
 @implementation AMFileTableController {
+    NSMutableArray<AMMarkdownFile *> * _fileArray;
     NSDateFormatter * _yearMonthDayFormatter;
     NSDateFormatter * _todayFormatter;
 }
@@ -40,15 +43,15 @@
     // 配置tableView, 空白处无分隔线
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame: CGRectZero];
     
+    // 注册3D Touch Preview
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        [self registerForPreviewingWithDelegate:self sourceView:self.view];
+    }
+    
     // 观察Theme设置改变
     [NSNotificationCenter.defaultCenter addObserverForName:AMThemeDidChangeNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
     }];
-    
-    // 注册preview
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        [self registerForPreviewingWithDelegate:self sourceView:self.view];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -106,14 +109,6 @@
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
         [destinationViewController loadFileWithMarkdownFile:self->_fileArray[self.tableView.indexPathForSelectedRow.row]];
     }
-    else if ([segue.identifier isEqualToString:@"CreateFileSegue"]) {
-        AMMarkdownFile * newMarkdownFile = [AMMarkdownFile MR_createEntity];
-        newMarkdownFile.creationDate = [NSDate new];
-        newMarkdownFile.modifiedDate = newMarkdownFile.creationDate;
-        AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
-        [destinationViewController loadFile:newMarkdownFile];
-        destinationViewController.isFirstResponderAfterLoading = YES;
-    }
 }
 
 
@@ -144,6 +139,22 @@
     } else {
         return oneday;
     }
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
+
+- (IBAction)clickAddButton:(id)sender {
+    UIViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"AMNewFileMenuTableController"];
+    controller.preferredContentSize = CGSizeMake(160, (10 + 2*38 + 10));
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    
+    UIPopoverPresentationController * popoverPresentationController = [controller popoverPresentationController];
+    popoverPresentationController.delegate = self;
+    popoverPresentationController.barButtonItem = self.addButton;
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

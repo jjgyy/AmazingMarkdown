@@ -66,7 +66,7 @@ class AMPreviewController: UIViewController {
     @objc
     func clickEditButtonHandler() {
         guard let markdownFile = self.markdownFile else { return }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RedirectToEdittingContentControllerNotification"), object: nil, userInfo: ["markdownFile" : markdownFile])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AMRedirectToEdittingContentControllerNotificationName"), object: nil, userInfo: ["markdownFile" : markdownFile])
     }
     
     @objc

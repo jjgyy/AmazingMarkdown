@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const AMRedirectToEdittingContentControllerNotificationName;
+
+extern NSString * const AMRequestCreatingFileNotificationName;
+
 @interface AMRootNavigationController : UINavigationController
 
 @end

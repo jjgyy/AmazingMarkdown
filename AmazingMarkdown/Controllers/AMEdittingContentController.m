@@ -20,8 +20,6 @@
 static const CGFloat kMainTextViewInitialFontSize = 17.0f;
 static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
 
-NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToEdittingContentControllerNotification";
-
 @interface AMEdittingContentController ()
 
 @property (strong, nonatomic) IBOutlet DYMarkdownTextView * mainTextView;
@@ -90,11 +88,6 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     // 配置_isReadyToQuit
     self->_isReadyToQuit = YES;
     
-    // 页面出现后_mainTextView获得焦点
-    if (self->_isFirstResponderAfterLoading) {
-        [self->_mainTextView becomeFirstResponder];
-    }
-    
     [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
 }
 
@@ -115,6 +108,12 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
         self->_mainTextView.frame = rect;
         [self hideDoneButton];
     }];
+    
+    // 页面出现后_mainTextView获得焦点
+    if (self->_isFirstResponderAfterAppearing) {
+        [self->_mainTextView becomeFirstResponder];
+        self->_isFirstResponderAfterAppearing = NO;
+    }
     
     [super viewDidAppear:YES];
 }
@@ -151,7 +150,7 @@ NSString * const RedirectToEdittingContentControllerNotification = @"RedirectToE
     [NSNotificationCenter.defaultCenter removeObserver:self->_keyboardHideObserver];
     self->_keyboardHideObserver = nil;
     
-    [self resignFirstResponderForSubviews];
+    //[self resignFirstResponderForSubviews];
     
     [super viewWillDisappear:animated];
 }

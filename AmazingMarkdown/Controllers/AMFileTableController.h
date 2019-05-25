@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMFileTableController : AMThemeTableViewController <UIViewControllerPreviewingDelegate>
+@interface AMFileTableController : AMThemeTableViewController <UIViewControllerPreviewingDelegate, UIPopoverPresentationControllerDelegate>
 
 @end
 

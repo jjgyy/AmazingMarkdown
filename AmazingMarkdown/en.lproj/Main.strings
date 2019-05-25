@@ -20,6 +20,9 @@
 /* Class = "UITableViewSection"; headerTitle = "Basic Settings"; ObjectID = "HVu-gv-dQI"; */
 "HVu-gv-dQI.headerTitle" = "Basic Settings";
 
+/* Class = "UILabel"; text = "Markdown"; ObjectID = "Hmt-aI-7L1"; */
+"Hmt-aI-7L1.text" = "Markdown";
+
 /* Class = "UILabel"; text = "Title"; ObjectID = "KSy-gZ-pca"; */
 "KSy-gZ-pca.text" = "Title";
 
@@ -29,20 +32,23 @@
 /* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
 "N5y-OA-zKP.title" = "Collation Setting";
 
+/* Class = "UILabel"; text = "Folder"; ObjectID = "YWJ-z3-r3i"; */
+"YWJ-z3-r3i.text" = "Folder";
+
 /* Class = "UITableViewController"; title = "Template Setting"; ObjectID = "bpO-dS-ztt"; */
 "bpO-dS-ztt.title" = "Template Setting";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "dHP-5C-rla"; */
 "dHP-5C-rla.text" = "Title";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "eF7-qc-30M"; */
-"eF7-qc-30M.text" = "Title";
-
 /* Class = "UILabel"; text = "MD"; ObjectID = "hID-nT-lFk"; */
 "hID-nT-lFk.text" = "MD";
 
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
 "hpt-vm-2ZO.title" = "Theme Setting";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "lT0-Fv-vGf"; */
+"lT0-Fv-vGf.text" = "Title";
 
 /* Class = "UITableViewSection"; headerTitle = "Advanced Settings"; ObjectID = "pYE-d9-LQP"; */
 "pYE-d9-LQP.headerTitle" = "Advanced Settings";

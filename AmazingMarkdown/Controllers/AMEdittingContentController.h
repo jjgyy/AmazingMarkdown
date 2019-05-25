@@ -11,11 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern NSString * const RedirectToEdittingContentControllerNotification;
-
 @interface AMEdittingContentController : UIViewController
 
-@property (nonatomic, assign) BOOL isFirstResponderAfterLoading;
+@property (nonatomic, assign) BOOL isFirstResponderAfterAppearing;
 
 - (void)loadFile:(AMMarkdownFile *)file;
 

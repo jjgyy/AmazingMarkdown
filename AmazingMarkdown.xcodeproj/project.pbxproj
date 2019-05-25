@@ -21,10 +21,11 @@
 		1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806018B2286AFBC007D4298 /* DYProgressView.m */; };
 		180601942286D04D007D4298 /* AMKeyboardSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601932286D04D007D4298 /* AMKeyboardSettingTableController.m */; };
 		180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601982286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m */; };
-		180601A122897222007D4298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
 		180601A422897344007D4298 /* AMTemplateSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601A322897344007D4298 /* AMTemplateSettingTableController.m */; };
 		180601A722897376007D4298 /* AMCollationSettingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180601A622897376007D4298 /* AMCollationSettingTableController.m */; };
 		180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180950EF227EC45B009FD493 /* AMFileTableController.m */; };
+		18179DDB22992D060046EE38 /* AMNewFileMenuTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18179DDA22992D060046EE38 /* AMNewFileMenuTableController.m */; };
+		18179DDE2299438E0046EE38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA492272EC8C00E08D43 /* Main.storyboard */; };
 		1842EA452272EC8C00E08D43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA442272EC8C00E08D43 /* AppDelegate.m */; };
 		1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA4C2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld */; };
 		1842EA502272EC8C00E08D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1842EA4F2272EC8C00E08D43 /* Assets.xcassets */; };
@@ -78,9 +79,11 @@
 		180601A322897344007D4298 /* AMTemplateSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMTemplateSettingTableController.m; sourceTree = "<group>"; };
 		180601A522897376007D4298 /* AMCollationSettingTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMCollationSettingTableController.h; sourceTree = "<group>"; };
 		180601A622897376007D4298 /* AMCollationSettingTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMCollationSettingTableController.m; sourceTree = "<group>"; };
-		180601A9228974CE007D4298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		180950EE227EC45B009FD493 /* AMFileTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFileTableController.h; sourceTree = "<group>"; };
 		180950EF227EC45B009FD493 /* AMFileTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileTableController.m; sourceTree = "<group>"; };
+		18179DD922992D060046EE38 /* AMNewFileMenuTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMNewFileMenuTableController.h; sourceTree = "<group>"; };
+		18179DDA22992D060046EE38 /* AMNewFileMenuTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMNewFileMenuTableController.m; sourceTree = "<group>"; };
+		18179DDD2299434E0046EE38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1842EA432272EC8C00E08D43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1842EA442272EC8C00E08D43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +149,10 @@
 		1806016622847A20007D4298 /* AMTheme */ = {
 			isa = PBXGroup;
 			children = (
+				187F9D9D2292A937009F95AB /* AMThemeTableViewController.h */,
+				187F9D9E2292A937009F95AB /* AMThemeTableViewController.m */,
+				187F9DA32292AE82009F95AB /* AMThemeTableViewCell.h */,
+				187F9DA42292AE82009F95AB /* AMThemeTableViewCell.m */,
 				18060161228425AC007D4298 /* AMTheme.h */,
 				180601722284830C007D4298 /* AMTheme+Class.h */,
 				180601732284830C007D4298 /* AMTheme+Class.m */,
@@ -260,6 +267,8 @@
 		187E52AB2274230F007D1B0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18179DD922992D060046EE38 /* AMNewFileMenuTableController.h */,
+				18179DDA22992D060046EE38 /* AMNewFileMenuTableController.m */,
 				187F9D9C2292A7B2009F95AB /* Setting Controllers */,
 				180950EE227EC45B009FD493 /* AMFileTableController.h */,
 				180950EF227EC45B009FD493 /* AMFileTableController.m */,
@@ -298,10 +307,6 @@
 				18B175BE227FEDDD007581F4 /* AMNavigationTitleTextField.m */,
 				1806014522830BD4007D4298 /* AMMarkdownFileTableCell.h */,
 				1806014622830BD4007D4298 /* AMMarkdownFileTableCell.m */,
-				187F9D9D2292A937009F95AB /* AMThemeTableViewController.h */,
-				187F9D9E2292A937009F95AB /* AMThemeTableViewController.m */,
-				187F9DA32292AE82009F95AB /* AMThemeTableViewCell.h */,
-				187F9DA42292AE82009F95AB /* AMThemeTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,7 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180601A122897222007D4298 /* Main.storyboard in Resources */,
+				18179DDE2299438E0046EE38 /* Main.storyboard in Resources */,
 				18B175B2227FE5BB007581F4 /* Localizable.strings in Resources */,
 				1842EA532272EC8C00E08D43 /* LaunchScreen.storyboard in Resources */,
 				18B175AA227FE093007581F4 /* InfoPlist.strings in Resources */,
@@ -491,6 +496,7 @@
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
 				180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */,
+				18179DDB22992D060046EE38 /* AMNewFileMenuTableController.m in Sources */,
 				18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */,
 				187F9D9F2292A937009F95AB /* AMThemeTableViewController.m in Sources */,
 				180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */,
@@ -512,7 +518,7 @@
 			children = (
 				1842EA4A2272EC8C00E08D43 /* Base */,
 				1806015522841D06007D4298 /* zh-Hans */,
-				180601A9228974CE007D4298 /* en */,
+				18179DDD2299434E0046EE38 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
