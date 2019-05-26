@@ -34,7 +34,7 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
 @implementation AMEdittingContentController {
     NSObject * _keyboardShowObserver;
     NSObject * _keyboardHideObserver;
-    BOOL _isReadyToQuit;
+    CGRect _mainTextViewFrameAfterKeyboardAppearing;
 }
 
 - (IBAction)rightEdgePanGesHandler:(UIScreenEdgePanGestureRecognizer *)sender {
@@ -70,8 +70,6 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
         } else {
-            // 防止_currentFile为空
-            self->_currentFile = [AMMarkdownFile MR_createEntity];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
@@ -85,20 +83,27 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     }
     self.navigationItem.titleView = self->_titleTextField;
     
-    // 配置_isReadyToQuit
-    self->_isReadyToQuit = YES;
     
     [self setTheme:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]]];
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
+    // 如果_currentFile被删除
+    if (!self->_currentFile) {
+        AMMarkdownFile * newMarkdownFile = [AMMarkdownFile MR_createEntity];
+        newMarkdownFile.creationDate = [NSDate new];
+        newMarkdownFile.modifiedDate = newMarkdownFile.creationDate;
+        self->_currentFile = newMarkdownFile;
+    }
+    
     // 观察键盘弹出
     self->_keyboardShowObserver = [NSNotificationCenter.defaultCenter addObserverForName:UIKeyboardWillShowNotification object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
         CGFloat keyboardHeight = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
         CGRect rect = self->_mainTextView.frame;
         rect.size.height = self.view.bounds.size.height - keyboardHeight;
         self->_mainTextView.frame = rect;
+        self->_mainTextViewFrameAfterKeyboardAppearing = rect;
         [self showDoneButton];
     }];
     // 观察键盘收起
@@ -115,8 +120,17 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
         self->_isFirstResponderAfterAppearing = NO;
     }
     
+    // 解决 滑动返回 中途取消 导致键盘弹出但mainTextView的frame没有缩小的问题
+    if (self->_mainTextView.isFirstResponder) {
+        [self showDoneButton];
+        if (self->_mainTextViewFrameAfterKeyboardAppearing.size.height) {
+            self->_mainTextView.frame = self->_mainTextViewFrameAfterKeyboardAppearing;
+        }
+    }
+    
     [super viewDidAppear:YES];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     // 将_mainTextView大小复原，隐藏_doneButton
@@ -125,9 +139,10 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     self->_mainTextView.frame = rect;
     [self hideDoneButton];
     
-    if (self->_isReadyToQuit && [self->_titleTextField.text isEqualToString:@""] && [self->_mainTextView.text isEqualToString:@""]) {
+    if ([self->_titleTextField.text isEqualToString:@""] && [self->_mainTextView.text isEqualToString:@""]) {
         // 如果没有内容, 则从数据库删除
         [NSManagedObjectContext.MR_defaultContext deleteObject:self->_currentFile];
+        self->_currentFile = nil;
     } else {
         // 保存到数据库
         self->_currentFile.title = [self->_titleTextField.text copy];
@@ -142,7 +157,6 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
         self->_currentFile.modifiedDate = [NSDate new];
     }
     [NSManagedObjectContext.MR_defaultContext MR_saveToPersistentStoreAndWait];
-    self->_isReadyToQuit = YES;
     
     // 移除键盘观察
     [NSNotificationCenter.defaultCenter removeObserver:self->_keyboardShowObserver];
@@ -150,15 +164,11 @@ static const CGFloat kMainTextViewInitialFontWeight = 0.01f;
     [NSNotificationCenter.defaultCenter removeObserver:self->_keyboardHideObserver];
     self->_keyboardHideObserver = nil;
     
-    //[self resignFirstResponderForSubviews];
-    
     [super viewWillDisappear:animated];
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // segue触发view disappear, 防止触发删除空文件, 导致返回原页面后编辑空文件不被保存
-    self->_isReadyToQuit = NO;
     if ([segue.identifier isEqualToString:@"PreviewMarkdownSegue"]) {
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
         [destinationViewController loadWithMarkdown:self.mainTextView.text];

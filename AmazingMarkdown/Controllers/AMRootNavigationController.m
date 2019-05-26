@@ -54,11 +54,7 @@ NSString * const AMRequestCreatingFileNotificationName = @"AMRequestCreatingFile
         [destinationViewController loadFile:(AMMarkdownFile *)sender];
     }
     else if ([segue.identifier isEqualToString:@"CreateFileSegue"]) {
-        AMMarkdownFile * newMarkdownFile = [AMMarkdownFile MR_createEntity];
-        newMarkdownFile.creationDate = [NSDate new];
-        newMarkdownFile.modifiedDate = newMarkdownFile.creationDate;
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
-        [destinationViewController loadFile:newMarkdownFile];
         destinationViewController.isFirstResponderAfterAppearing = YES;
     }
 }
