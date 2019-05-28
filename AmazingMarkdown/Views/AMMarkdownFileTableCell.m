@@ -28,14 +28,15 @@
 
 - (void)setTheme:(AMTheme *)theme {
     self.backgroundColor = theme.cellColor;
+    self->_summaryLabel.text = [self->_summaryLabel.text isEqualToString:@""] ? NSLocalizedString(@"no summary", nil) : self->_summaryLabel.text;
     if ([self.titleLabel.text isEqualToString:@""]) {
-        self.titleLabel.textColor = theme.cellTitleSpecialColor;
-        self.titleLabel.text = NSLocalizedString(@"untitled", nil);
+        self->_titleLabel.textColor = theme.cellTitleSpecialColor;
+        self->_titleLabel.text = NSLocalizedString(@"untitled", nil);
     }
     else {
-        self.titleLabel.textColor = theme.cellTitleColor;
+        self->_titleLabel.textColor = theme.cellTitleColor;
     }
-    self.typeLabel.textColor = UIColor.flatRedColorDark;
+    self->_typeLabel.textColor = UIColor.flatSkyBlueColor;
     self.selectedBackgroundView = [[UIView alloc]initWithFrame:self.frame];
     self.selectedBackgroundView.backgroundColor = theme.cellSelectedColor;
 }

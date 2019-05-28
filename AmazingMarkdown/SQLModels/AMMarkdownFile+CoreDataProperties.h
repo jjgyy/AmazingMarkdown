@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<AMMarkdownFile *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *category;
+@property (nullable, nonatomic, copy) NSString *folder;
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nullable, nonatomic, copy) NSDate *creationDate;
 @property (nonatomic) BOOL isHidden;

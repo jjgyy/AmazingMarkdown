@@ -14,6 +14,8 @@ extern NSString * const AMRedirectToEdittingContentControllerNotificationName;
 
 extern NSString * const AMRequestCreatingFileNotificationName;
 
+extern NSString * const AMRequestCreatingFolderNotificationName;
+
 @interface AMRootNavigationController : UINavigationController
 
 @end

@@ -24,7 +24,7 @@ NSString * const AMCollationSettingDidChangeNotificationName = @"AMCollationSett
 }
 
 + (NSArray<NSString *> *)collationKeys {
-    return @[@"creationDate", @"modifiedDate", @"title"];
+    return @[@"creationDate", @"modifiedDate"];
 }
 
 - (void)viewDidLoad {
@@ -39,7 +39,7 @@ NSString * const AMCollationSettingDidChangeNotificationName = @"AMCollationSett
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 3;
+        return 2;
     }
     else if (section == 1) {
         return 2;
@@ -65,9 +65,6 @@ NSString * const AMCollationSettingDidChangeNotificationName = @"AMCollationSett
         }
         else if (indexPath.row == 1) {
             cell.textLabel.text = NSLocalizedString(@"modification time", nil);
-        }
-        else if (indexPath.row == 2) {
-            cell.textLabel.text = NSLocalizedString(@"file name", nil);
         }
         
         if (self->_collationKeyIndex == indexPath.row) {

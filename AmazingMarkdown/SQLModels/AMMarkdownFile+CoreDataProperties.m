@@ -15,7 +15,7 @@
 	return [NSFetchRequest fetchRequestWithEntityName:@"AMMarkdownFile"];
 }
 
-@dynamic category;
+@dynamic folder;
 @dynamic content;
 @dynamic creationDate;
 @dynamic isHidden;

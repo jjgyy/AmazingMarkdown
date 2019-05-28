@@ -22,11 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"enter shortcut content", nil) attributes:@{NSForegroundColorAttributeName:AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]].placeholderColor}];
-    self->_shortcutContentTextField.attributedPlaceholder = attributedPlaceholder;
-    self->_shortcutContentTextField.font = [UIFont systemFontOfSize:16.0f];
-    self->_shortcutContentTextField.text = @"";
-    self->_shortcutContentTextField.textColor = AMTheme.themes[[NSUserDefaults.standardUserDefaults integerForKey:AMThemeIndexUserDefaultsKey]].textColor;
 }
 
 - (IBAction)clickDoneButtonHandler:(id)sender {
@@ -36,4 +31,14 @@
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)setTheme:(AMTheme *)theme {
+    [super setTheme:theme];
+    NSAttributedString * attributedPlaceholder = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"enter shortcut content", nil) attributes:@{NSForegroundColorAttributeName:theme.placeholderColor}];
+    self->_shortcutContentTextField.attributedPlaceholder = attributedPlaceholder;
+    self->_shortcutContentTextField.font = [UIFont systemFontOfSize:16.0f];
+    self->_shortcutContentTextField.text = @"";
+    self->_shortcutContentTextField.textColor = theme.textColor;
+}
+
 @end

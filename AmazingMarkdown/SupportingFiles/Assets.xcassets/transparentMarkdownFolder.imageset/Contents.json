@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "transparentMarkdownFolder.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "organization.png",
       "scale" : "2x"
     },
     {

@@ -76,7 +76,7 @@ class AMPreviewController: UIViewController {
     }
     
     @objc
-    func loadFile(markdownFile: AMMarkdownFile?) {
+    func load(markdownFile: AMMarkdownFile?) {
         self.markdownFile = markdownFile
         self.title = markdownFile?.title
         self.markdownString = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (markdownFile?.content ?? "")
@@ -85,7 +85,7 @@ class AMPreviewController: UIViewController {
     }
     
     @objc
-    func loadExternalFile(externalFile: AMExternalMarkdownFile?) {
+    func load(externalFile: AMExternalMarkdownFile?) {
         self.title = externalFile?.fileName
         guard let data = externalFile?.fileData else { return }
         self.markdownString = AMTheme.themes[UserDefaults.standard.integer(forKey: AMThemeIndexUserDefaultsKey)].cssStyleString + "\n" + (String(data: data, encoding: .utf8) ?? "")

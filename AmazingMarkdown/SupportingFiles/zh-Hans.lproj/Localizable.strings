@@ -28,3 +28,8 @@
 "file name" = "文件名";
 "descending order" = "降序";
 "ascending order" = "升序";
+
+
+"folder name" = "文件夹名称...";
+
+"empty folder" = "空文件夹";

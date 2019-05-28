@@ -1,8 +1,8 @@
 //
-//  AMThemeTableViewCell.h
+//  AMThemeViewController.h
 //  AmazingMarkdown
 //
-//  Created by Apple on 2019/5/20.
+//  Created by Apple on 2019/5/26.
 //  Copyright © 2019 Young. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AMThemeTableViewCell : UITableViewCell
+@interface AMThemeViewController : UIViewController
 
 - (void)setTheme:(AMTheme *)theme;
 

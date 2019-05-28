@@ -16,7 +16,10 @@
 #import "AMThemeSettingTableController.h"
 
 NSString * const AMRedirectToEdittingContentControllerNotificationName = @"AMRedirectToEdittingContentControllerNotificationName";
+
 NSString * const AMRequestCreatingFileNotificationName = @"AMRequestCreatingFileNotificationName";
+
+NSString * const AMRequestCreatingFolderNotificationName = @"AMRequestCreatingFolderNotificationName";
 
 @interface AMRootNavigationController ()
 
@@ -42,20 +45,31 @@ NSString * const AMRequestCreatingFileNotificationName = @"AMRequestCreatingFile
         [self popToRootViewControllerAnimated:NO];
         [self performSegueWithIdentifier:@"CreateFileSegue" sender:nil];
     }];
+    
+    [NSNotificationCenter.defaultCenter addObserverForName:AMRequestCreatingFolderNotificationName object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+        [self popToRootViewControllerAnimated:NO];
+        [self performSegueWithIdentifier:@"CreateFolderSegue" sender:nil];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"PreviewMarkdownFileSegue"]) {
         AMPreviewController * destinationViewController = (AMPreviewController *)segue.destinationViewController;
-        [destinationViewController loadExternalFileWithExternalFile:(AMExternalMarkdownFile *)sender];
+        [destinationViewController loadWithExternalFile:(AMExternalMarkdownFile *)sender];
+        return;
     }
-    else if ([segue.identifier isEqualToString:@"EditFileSegue"]) {
+    if ([segue.identifier isEqualToString:@"EditFileSegue"]) {
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
         [destinationViewController loadFile:(AMMarkdownFile *)sender];
+        return;
     }
-    else if ([segue.identifier isEqualToString:@"CreateFileSegue"]) {
+    if ([segue.identifier isEqualToString:@"CreateFileSegue"]) {
         AMEdittingContentController * destinationViewController = (AMEdittingContentController *)segue.destinationViewController;
         destinationViewController.isFirstResponderAfterAppearing = YES;
+        return;
+    }
+    if ([segue.identifier isEqualToString:@"CreateFolderSegue"]) {
+        return;
     }
 }
 

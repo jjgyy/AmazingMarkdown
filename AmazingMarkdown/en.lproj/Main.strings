@@ -2,6 +2,12 @@
 /* Class = "UITableViewController"; title = "Add Shortcut"; ObjectID = "0Ar-Tr-BbS"; */
 "0Ar-Tr-BbS.title" = "Add Shortcut";
 
+/* Class = "UILabel"; text = "date"; ObjectID = "2Nd-vN-1En"; */
+"2Nd-vN-1En.text" = "date";
+
+/* Class = "UILabel"; text = "INCLUDED FILES"; ObjectID = "38f-Yq-dQt"; */
+"38f-Yq-dQt.text" = "INCLUDED FILES";
+
 /* Class = "UILabel"; text = "Theme Setting"; ObjectID = "6Wr-Dj-Epz"; */
 "6Wr-Dj-Epz.text" = "Theme Setting";
 
@@ -17,8 +23,17 @@
 /* Class = "UITableViewController"; title = "Setting"; ObjectID = "E0P-Sr-3ma"; */
 "E0P-Sr-3ma.title" = "Setting";
 
+/* Class = "UILabel"; text = "Title"; ObjectID = "EvJ-MC-1ru"; */
+"EvJ-MC-1ru.text" = "Title";
+
+/* Class = "UILabel"; text = "Templated"; ObjectID = "GgZ-gI-Qoz"; */
+"GgZ-gI-Qoz.text" = "Templated";
+
 /* Class = "UITableViewSection"; headerTitle = "Basic Settings"; ObjectID = "HVu-gv-dQI"; */
 "HVu-gv-dQI.headerTitle" = "Basic Settings";
+
+/* Class = "UILabel"; text = "intro"; ObjectID = "HY4-ll-sl4"; */
+"HY4-ll-sl4.text" = "intro";
 
 /* Class = "UILabel"; text = "Markdown"; ObjectID = "Hmt-aI-7L1"; */
 "Hmt-aI-7L1.text" = "Markdown";
@@ -29,8 +44,20 @@
 /* Class = "UILabel"; text = "summary"; ObjectID = "Ky0-xA-CuC"; */
 "Ky0-xA-CuC.text" = "summary";
 
+/* Class = "UILabel"; text = "summary"; ObjectID = "L6J-sM-NfE"; */
+"L6J-sM-NfE.text" = "summary";
+
 /* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
 "N5y-OA-zKP.title" = "Collation Setting";
+
+/* Class = "UILabel"; text = "FOLDER NAME"; ObjectID = "RHC-2v-f7F"; */
+"RHC-2v-f7F.text" = "FOLDER NAME";
+
+/* Class = "UILabel"; text = "summary"; ObjectID = "VJQ-9S-mbX"; */
+"VJQ-9S-mbX.text" = "summary";
+
+/* Class = "UILabel"; text = "date"; ObjectID = "XyA-N2-4jw"; */
+"XyA-N2-4jw.text" = "date";
 
 /* Class = "UILabel"; text = "Folder"; ObjectID = "YWJ-z3-r3i"; */
 "YWJ-z3-r3i.text" = "Folder";
@@ -47,8 +74,17 @@
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
 "hpt-vm-2ZO.title" = "Theme Setting";
 
+/* Class = "UILabel"; text = "Name"; ObjectID = "j1v-my-zO6"; */
+"j1v-my-zO6.text" = "Name";
+
+/* Class = "UILabel"; text = "MD"; ObjectID = "jOp-I2-XXL"; */
+"jOp-I2-XXL.text" = "MD";
+
 /* Class = "UILabel"; text = "Title"; ObjectID = "lT0-Fv-vGf"; */
 "lT0-Fv-vGf.text" = "Title";
+
+/* Class = "UILabel"; text = "MD"; ObjectID = "mcI-XZ-JgZ"; */
+"mcI-XZ-JgZ.text" = "MD";
 
 /* Class = "UITableViewSection"; headerTitle = "Advanced Settings"; ObjectID = "pYE-d9-LQP"; */
 "pYE-d9-LQP.headerTitle" = "Advanced Settings";
@@ -67,3 +103,6 @@
 
 /* Class = "UIBarButtonItem"; title = "Preview"; ObjectID = "ycx-Ev-fxt"; */
 "ycx-Ev-fxt.title" = "Preview";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "ydS-7p-15N"; */
+"ydS-7p-15N.text" = "Title";

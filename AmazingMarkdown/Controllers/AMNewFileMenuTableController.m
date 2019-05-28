@@ -23,6 +23,15 @@
     if (indexPath.row == 1) {
         [NSNotificationCenter.defaultCenter postNotificationName:AMRequestCreatingFileNotificationName object:nil];
         [self dismissViewControllerAnimated:NO completion:nil];
+        return;
+    }
+    if (indexPath.row == 2) {
+        // TODO: Templated
+    }
+    if (indexPath.row == 3) {
+        [NSNotificationCenter.defaultCenter postNotificationName:AMRequestCreatingFolderNotificationName object:nil];
+        [self dismissViewControllerAnimated:NO completion:nil];
+        return;
     }
 }
 

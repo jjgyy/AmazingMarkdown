@@ -25,6 +25,7 @@
 }
 
 - (void)setTheme:(AMTheme *)theme {
+    self.view.backgroundColor = theme.backgroundColor;
     self.tableView.backgroundColor = theme.backgroundColor;
     self.tableView.separatorColor = theme.separatorColor;
 }

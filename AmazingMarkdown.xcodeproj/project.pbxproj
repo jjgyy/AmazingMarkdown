@@ -35,11 +35,16 @@
 		1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842EA642272EDB300E08D43 /* AMPreviewController.swift */; };
 		187F9D9F2292A937009F95AB /* AMThemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9D9E2292A937009F95AB /* AMThemeTableViewController.m */; };
 		187F9DA52292AE82009F95AB /* AMThemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F9DA42292AE82009F95AB /* AMThemeTableViewCell.m */; };
+		189CAE3B229BCDCD00064919 /* AMFileInFolderTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CAE3A229BCDCD00064919 /* AMFileInFolderTableController.m */; };
+		189CAE3E229BD28100064919 /* AMDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 189CAE3D229BD28100064919 /* AMDateParser.m */; };
 		18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175A6227F5691007581F4 /* AMRootNavigationController.m */; };
 		18B175AA227FE093007581F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18B175AC227FE093007581F4 /* InfoPlist.strings */; };
 		18B175B2227FE5BB007581F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18B175B4227FE5BB007581F4 /* Localizable.strings */; };
 		18B175BF227FEDDD007581F4 /* AMNavigationTitleTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175BE227FEDDD007581F4 /* AMNavigationTitleTextField.m */; };
 		18B175C922801551007581F4 /* AMExternalMarkdownFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B175C822801551007581F4 /* AMExternalMarkdownFile.m */; };
+		18DED4F4229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DED4F2229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.m */; };
+		18DED4F8229A6CFD00615E0F /* AMThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DED4F7229A6CFD00615E0F /* AMThemeViewController.m */; };
+		18DED4FB229A6DED00615E0F /* AMCreateFolderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DED4FA229A6DED00615E0F /* AMCreateFolderController.m */; };
 		18F4260C22744C67002EBDDD /* AMKeyboardToolbarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */; };
 		18F4261D22747281002EBDDD /* DYKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261C22747281002EBDDD /* DYKeyboardToolbar.m */; };
 		18F42620227472B4002EBDDD /* DYKeyboardToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4261F227472B4002EBDDD /* DYKeyboardToolbarButton.m */; };
@@ -83,7 +88,6 @@
 		180950EF227EC45B009FD493 /* AMFileTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileTableController.m; sourceTree = "<group>"; };
 		18179DD922992D060046EE38 /* AMNewFileMenuTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMNewFileMenuTableController.h; sourceTree = "<group>"; };
 		18179DDA22992D060046EE38 /* AMNewFileMenuTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMNewFileMenuTableController.m; sourceTree = "<group>"; };
-		18179DDD2299434E0046EE38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1842EA402272EC8C00E08D43 /* AmazingMarkdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmazingMarkdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1842EA432272EC8C00E08D43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1842EA442272EC8C00E08D43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +105,11 @@
 		187F9D9E2292A937009F95AB /* AMThemeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMThemeTableViewController.m; sourceTree = "<group>"; };
 		187F9DA32292AE82009F95AB /* AMThemeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMThemeTableViewCell.h; sourceTree = "<group>"; };
 		187F9DA42292AE82009F95AB /* AMThemeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMThemeTableViewCell.m; sourceTree = "<group>"; };
+		189CAE39229BCDCD00064919 /* AMFileInFolderTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMFileInFolderTableController.h; sourceTree = "<group>"; };
+		189CAE3A229BCDCD00064919 /* AMFileInFolderTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMFileInFolderTableController.m; sourceTree = "<group>"; };
+		189CAE3C229BD28100064919 /* AMDateParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDateParser.h; sourceTree = "<group>"; };
+		189CAE3D229BD28100064919 /* AMDateParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMDateParser.m; sourceTree = "<group>"; };
+		189CAE42229BDFAF00064919 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		18B175A5227F5691007581F4 /* AMRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMRootNavigationController.h; sourceTree = "<group>"; };
 		18B175A6227F5691007581F4 /* AMRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMRootNavigationController.m; sourceTree = "<group>"; };
 		18B175AB227FE093007581F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -112,6 +121,14 @@
 		18B175BE227FEDDD007581F4 /* AMNavigationTitleTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMNavigationTitleTextField.m; sourceTree = "<group>"; };
 		18B175C722801551007581F4 /* AMExternalMarkdownFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMExternalMarkdownFile.h; sourceTree = "<group>"; };
 		18B175C822801551007581F4 /* AMExternalMarkdownFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMExternalMarkdownFile.m; sourceTree = "<group>"; };
+		18DED4F0229A66F500615E0F /* AMMarkdownFolder+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMMarkdownFolder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		18DED4F1229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMMarkdownFolder+CoreDataClass.h"; sourceTree = "<group>"; };
+		18DED4F2229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFolder+CoreDataClass.m"; sourceTree = "<group>"; };
+		18DED4F3229A66F500615E0F /* AMMarkdownFolder+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AMMarkdownFolder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		18DED4F6229A6CFD00615E0F /* AMThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMThemeViewController.h; sourceTree = "<group>"; };
+		18DED4F7229A6CFD00615E0F /* AMThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMThemeViewController.m; sourceTree = "<group>"; };
+		18DED4F9229A6DED00615E0F /* AMCreateFolderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMCreateFolderController.h; sourceTree = "<group>"; };
+		18DED4FA229A6DED00615E0F /* AMCreateFolderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMCreateFolderController.m; sourceTree = "<group>"; };
 		18F4260A22744C67002EBDDD /* AMKeyboardToolbarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMKeyboardToolbarFactory.m; sourceTree = "<group>"; };
 		18F4260B22744C67002EBDDD /* AMKeyboardToolbarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMKeyboardToolbarFactory.h; sourceTree = "<group>"; };
 		18F4261B22747281002EBDDD /* DYKeyboardToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYKeyboardToolbar.h; sourceTree = "<group>"; };
@@ -149,6 +166,8 @@
 		1806016622847A20007D4298 /* AMTheme */ = {
 			isa = PBXGroup;
 			children = (
+				18DED4F6229A6CFD00615E0F /* AMThemeViewController.h */,
+				18DED4F7229A6CFD00615E0F /* AMThemeViewController.m */,
 				187F9D9D2292A937009F95AB /* AMThemeTableViewController.h */,
 				187F9D9E2292A937009F95AB /* AMThemeTableViewController.m */,
 				187F9DA32292AE82009F95AB /* AMThemeTableViewCell.h */,
@@ -201,6 +220,10 @@
 		180950EC227EC2FE009FD493 /* SQLModels */ = {
 			isa = PBXGroup;
 			children = (
+				18DED4F0229A66F500615E0F /* AMMarkdownFolder+CoreDataProperties.h */,
+				18DED4F1229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.h */,
+				18DED4F2229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.m */,
+				18DED4F3229A66F500615E0F /* AMMarkdownFolder+CoreDataProperties.m */,
 				1806014822832928007D4298 /* AMMarkdownFile+CoreDataProperties.h */,
 				1806014922832928007D4298 /* AMMarkdownFile+CoreDataClass.h */,
 				1806014A22832928007D4298 /* AMMarkdownFile+CoreDataClass.m */,
@@ -236,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				1806016622847A20007D4298 /* AMTheme */,
+				189CAE3F229BD28800064919 /* Tools */,
 				18B175C022801435007581F4 /* Models */,
 				18B175B6227FE9FB007581F4 /* Views */,
 				180950EC227EC2FE009FD493 /* SQLModels */,
@@ -267,16 +291,15 @@
 		187E52AB2274230F007D1B0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				189CAE40229BDBE600064919 /* Files Table Controllers */,
+				187F9D9C2292A7B2009F95AB /* Setting Controllers */,
+				189CAE36229BB9DE00064919 /* Editting & Preview Controllers */,
 				18179DD922992D060046EE38 /* AMNewFileMenuTableController.h */,
 				18179DDA22992D060046EE38 /* AMNewFileMenuTableController.m */,
-				187F9D9C2292A7B2009F95AB /* Setting Controllers */,
-				180950EE227EC45B009FD493 /* AMFileTableController.h */,
-				180950EF227EC45B009FD493 /* AMFileTableController.m */,
-				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
-				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
 				18B175A5227F5691007581F4 /* AMRootNavigationController.h */,
 				18B175A6227F5691007581F4 /* AMRootNavigationController.m */,
-				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
+				18DED4F9229A6DED00615E0F /* AMCreateFolderController.h */,
+				18DED4FA229A6DED00615E0F /* AMCreateFolderController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,6 +321,36 @@
 				180601A622897376007D4298 /* AMCollationSettingTableController.m */,
 			);
 			path = "Setting Controllers";
+			sourceTree = "<group>";
+		};
+		189CAE36229BB9DE00064919 /* Editting & Preview Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1842EA612272ED9F00E08D43 /* AMEdittingContentController.h */,
+				1842EA622272ED9F00E08D43 /* AMEdittingContentController.m */,
+				1842EA642272EDB300E08D43 /* AMPreviewController.swift */,
+			);
+			path = "Editting & Preview Controllers";
+			sourceTree = "<group>";
+		};
+		189CAE3F229BD28800064919 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				189CAE3C229BD28100064919 /* AMDateParser.h */,
+				189CAE3D229BD28100064919 /* AMDateParser.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		189CAE40229BDBE600064919 /* Files Table Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				180950EE227EC45B009FD493 /* AMFileTableController.h */,
+				180950EF227EC45B009FD493 /* AMFileTableController.m */,
+				189CAE39229BCDCD00064919 /* AMFileInFolderTableController.h */,
+				189CAE3A229BCDCD00064919 /* AMFileInFolderTableController.m */,
+			);
+			path = "Files Table Controllers";
 			sourceTree = "<group>";
 		};
 		18B175B6227FE9FB007581F4 /* Views */ = {
@@ -480,6 +533,7 @@
 			files = (
 				180601A422897344007D4298 /* AMTemplateSettingTableController.m in Sources */,
 				1842EA652272EDB300E08D43 /* AMPreviewController.swift in Sources */,
+				18DED4F4229A66F500615E0F /* AMMarkdownFolder+CoreDataClass.m in Sources */,
 				180601A722897376007D4298 /* AMCollationSettingTableController.m in Sources */,
 				187F9DA52292AE82009F95AB /* AMThemeTableViewCell.m in Sources */,
 				1842EA632272ED9F00E08D43 /* AMEdittingContentController.m in Sources */,
@@ -495,13 +549,17 @@
 				18060185228670B5007D4298 /* MarkdownView.swift in Sources */,
 				1842EA562272EC8C00E08D43 /* main.m in Sources */,
 				18F42623227498AC002EBDDD /* DYMarkdownTextView.m in Sources */,
+				18DED4F8229A6CFD00615E0F /* AMThemeViewController.m in Sources */,
 				180601992286EE47007D4298 /* AMKeyboardSettingAddShortcutController.m in Sources */,
 				18179DDB22992D060046EE38 /* AMNewFileMenuTableController.m in Sources */,
 				18B175A7227F5691007581F4 /* AMRootNavigationController.m in Sources */,
 				187F9D9F2292A937009F95AB /* AMThemeTableViewController.m in Sources */,
+				18DED4FB229A6DED00615E0F /* AMCreateFolderController.m in Sources */,
 				180950F0227EC45B009FD493 /* AMFileTableController.m in Sources */,
+				189CAE3B229BCDCD00064919 /* AMFileInFolderTableController.m in Sources */,
 				1842EA4E2272EC8C00E08D43 /* AmazingMarkdown.xcdatamodeld in Sources */,
 				180601742284830C007D4298 /* AMTheme+Class.m in Sources */,
+				189CAE3E229BD28100064919 /* AMDateParser.m in Sources */,
 				1806014C22832928007D4298 /* AMMarkdownFile+CoreDataClass.m in Sources */,
 				1806018C2286AFBC007D4298 /* DYProgressView.m in Sources */,
 				1806015E2284207D007D4298 /* AMThemeSettingTableController.m in Sources */,
@@ -518,7 +576,7 @@
 			children = (
 				1842EA4A2272EC8C00E08D43 /* Base */,
 				1806015522841D06007D4298 /* zh-Hans */,
-				18179DDD2299434E0046EE38 /* en */,
+				189CAE42229BDFAF00064919 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

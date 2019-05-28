@@ -13,8 +13,14 @@
 /* Class = "UITableViewController"; title = "Setting"; ObjectID = "E0P-Sr-3ma"; */
 "E0P-Sr-3ma.title" = "设置";
 
+/* Class = "UILabel"; text = "Templated"; ObjectID = "GgZ-gI-Qoz"; */
+"GgZ-gI-Qoz.text" = "模板MD";
+
 /* Class = "UITableViewSection"; headerTitle = "Basic Settings"; ObjectID = "HVu-gv-dQI"; */
 "HVu-gv-dQI.headerTitle" = "基本设置";
+
+/* Class = "UILabel"; text = "Markdown"; ObjectID = "Hmt-aI-7L1"; */
+"Hmt-aI-7L1.text" = "Markdown";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "KSy-gZ-pca"; */
 "KSy-gZ-pca.text" = "Title";
@@ -25,11 +31,17 @@
 /* Class = "UITableViewController"; title = "Collation Setting"; ObjectID = "N5y-OA-zKP"; */
 "N5y-OA-zKP.title" = "排序规则设置";
 
+/* Class = "UILabel"; text = "FOLDER NAME"; ObjectID = "RHC-2v-f7F"; */
+"RHC-2v-f7F.text" = "文件夹名称";
+
 /* Class = "UILabel"; text = "Folder"; ObjectID = "YWJ-z3-r3i"; */
 "YWJ-z3-r3i.text" = "文件夹";
 
 /* Class = "UITableViewController"; title = "Template Setting"; ObjectID = "bpO-dS-ztt"; */
 "bpO-dS-ztt.title" = "模板设置";
+
+/* Class = "UILabel"; text = "INCLUDED FILES"; ObjectID = "38f-Yq-dQt"; */
+"38f-Yq-dQt.text" = "包含文件";
 
 /* Class = "UITableViewController"; title = "Theme Setting"; ObjectID = "hpt-vm-2ZO"; */
 "hpt-vm-2ZO.title" = "主题设置";

@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor * navigationTintColor;
 
 @property (nonatomic, strong) UIColor * backgroundColor;
+@property (nonatomic, strong) UIColor * backgroundNoticeColor;
 
 @property (nonatomic, strong) UIColor * sectionTitleColor;
 @property (nonatomic, strong) UIColor * separatorColor;

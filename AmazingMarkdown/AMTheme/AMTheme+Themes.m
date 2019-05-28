@@ -30,6 +30,7 @@ static AMTheme * _brightTheme;
         _brightTheme.navigationTintColor = UIColor.flatBlackColor;
         
         _brightTheme.backgroundColor = UIColor.groupTableViewBackgroundColor;
+        _brightTheme.backgroundNoticeColor = HexColor(@"#d0d0d0");
         
         _brightTheme.sectionTitleColor = UIColor.grayColor;
         _brightTheme.separatorColor = UIColor.flatGrayColor;
@@ -58,6 +59,7 @@ static AMTheme * _darkTheme;
         _darkTheme.navigationTintColor = UIColor.whiteColor;
         
         _darkTheme.backgroundColor = HexColor(@"#333333");
+        _darkTheme.backgroundNoticeColor = UIColor.darkGrayColor;
         
         _darkTheme.sectionTitleColor = UIColor.flatWhiteColorDark;
         _darkTheme.separatorColor = HexColor(@"#666666");
